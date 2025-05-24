@@ -1,49 +1,139 @@
-@font-face{
-  font-display:swap;
-  font-family:yekanbakh;
-  font-weight:400;
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.eot?89830f57be6a7fa2aaaca848947fb023);
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.eot?89830f57be6a7fa2aaaca848947fb023?#iefix) format("embedded-opentype"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.woff?74655fa26f28d8567a7d4c102068889e) format("woff"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.ttf?3ee00883a9701befc8be495c4e99397f) format("truetype")
+@font-face {
+  font-display: swap !important;
+  font-family: yekanbakh;
+  font-weight: 400;
+  src: url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.eot?89830f57be6a7fa2aaaca848947fb023);
+  src:
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.eot?89830f57be6a7fa2aaaca848947fb023?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.woff?74655fa26f28d8567a7d4c102068889e)
+      format("woff"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-04-Regular.ttf?3ee00883a9701befc8be495c4e99397f)
+      format("truetype");
 }
 
-@font-face{
-  font-display:swap;
-  font-family:yekanbakh;
-  font-weight:500;
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.eot?6d3273ff71c9496c4de83b9e74645896);
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.eot?6d3273ff71c9496c4de83b9e74645896?#iefix) format("embedded-opentype"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.woff?4be8304dcd7ae154a2d32e1d022538f8) format("woff"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.ttf?45281cca684d63170f5a833037ba567e) format("truetype")
+@font-face {
+  font-display: swap !important;
+  font-family: yekanbakh;
+  font-weight: 500;
+  src: url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.eot?6d3273ff71c9496c4de83b9e74645896);
+  src:
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.eot?6d3273ff71c9496c4de83b9e74645896?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.woff?4be8304dcd7ae154a2d32e1d022538f8)
+      format("woff"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-05-Medium.ttf?45281cca684d63170f5a833037ba567e)
+      format("truetype");
 }
 
-@font-face{
-  font-display:swap;
-  font-family:yekanbakh;
-  font-weight:600;
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.eot?6d6589a62ab2c3e62ce1484b4966931a);
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.eot?6d6589a62ab2c3e62ce1484b4966931a?#iefix) format("embedded-opentype"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.woff?6be8947dc2a9db02022a0225f82ed6c7) format("woff"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.ttf?4b6fd692e920dc57d7eaec8e9eba8abb) format("truetype")
+@font-face {
+  font-display: swap !important;
+  font-family: yekanbakh;
+  font-weight: 600;
+  src: url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.eot?6d6589a62ab2c3e62ce1484b4966931a);
+  src:
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.eot?6d6589a62ab2c3e62ce1484b4966931a?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.woff?6be8947dc2a9db02022a0225f82ed6c7)
+      format("woff"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-06-Bold.ttf?4b6fd692e920dc57d7eaec8e9eba8abb)
+      format("truetype");
 }
 
-@font-face{
-  font-display:swap;
-  font-family:yekanbakh;
-  font-weight:700;
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.eot?39a2808fb7c800c9a263fc12ddaad6df);
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.eot?39a2808fb7c800c9a263fc12ddaad6df?#iefix) format("embedded-opentype"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.woff?eb23f8ee4a4a18db8d7e21a40d9141d8) format("woff"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.ttf?bc9f9de9570a187811c70dee52bf90fe) format("truetype")
+@font-face {
+  font-display: swap !important;
+  font-family: yekanbakh;
+  font-weight: 700;
+  src: url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.eot?39a2808fb7c800c9a263fc12ddaad6df);
+  src:
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.eot?39a2808fb7c800c9a263fc12ddaad6df?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.woff?eb23f8ee4a4a18db8d7e21a40d9141d8)
+      format("woff"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-07-Heavy.ttf?bc9f9de9570a187811c70dee52bf90fe)
+      format("truetype");
 }
 
-@font-face{
-  font-display:swap;
-  font-family:yekanbakh;
-  font-weight:800;
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.eot?654b3f00c8084ff458177bed10b2d9dd);
-  src:url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.eot?654b3f00c8084ff458177bed10b2d9dd?#iefix) format("embedded-opentype"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.woff?4ad33b69928bc8f5ec077ecc1b2167d9) format("woff"),
-  url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.ttf?0f7b20c1916c4426b6a83c1d02ff867b) format("truetype")
+@font-face {
+  font-display: swap !important;
+  font-family: yekanbakh;
+  font-weight: 800;
+  src: url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.eot?654b3f00c8084ff458177bed10b2d9dd);
+  src:
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.eot?654b3f00c8084ff458177bed10b2d9dd?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.woff?4ad33b69928bc8f5ec077ecc1b2167d9)
+      format("woff"),
+    url(../fonts/yekanbakh/Yekan-Bakh-FaNum-08-Fat.ttf?0f7b20c1916c4426b6a83c1d02ff867b)
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vazir/Vazir-Light.eot?0b44836d8724174b5011002b718d485c");
+  src:
+    url("../fonts/vazir/Vazir-Light.eot?0b44836d8724174b5011002b718d485c#iefix")
+      format("embedded-opentype"),
+    url("../fonts/vazir/Vazir-Light.woff?1c7f779da0c3e054b7494cd74558f520")
+      format("woff"),
+    url("../fonts/vazir/Vazir-Light.ttf?29002bf5cccc9043dd777970f6241bfe")
+      format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vazir/Vazir.eot?b3107e85ab4cd06b379624baa2ad56d1");
+  src:
+    url("../fonts/vazir/Vazir.eot?b3107e85ab4cd06b379624baa2ad56d1#iefix")
+      format("embedded-opentype"),
+    url("../fonts/vazir/Vazir.woff?21996b67bae94dde1afea1865865f8ce")
+      format("woff"),
+    url("../fonts/vazir/Vazir.ttf?a83daff6a3fcaf7cf89f771c940e401f")
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vazir/Vazir-Medium.eot?f668b5fa32a33b0a58d3ca61aea3aac2");
+  src:
+    url("../fonts/vazir/Vazir-Medium.eot?f668b5fa32a33b0a58d3ca61aea3aac2#iefix")
+      format("embedded-opentype"),
+    url("../fonts/vazir/Vazir-Medium.woff?7e5c1289975b413a1f109bc490d7508c")
+      format("woff"),
+    url("../fonts/vazir/Vazir-Medium.ttf?e7ef286ad1a9ecdc146bcfe51416ee6e")
+      format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vazir/Vazir-Bold.eot?47c7f9c48f3d93d5daa15b4eaef5f318");
+  src:
+    url("../fonts/vazir/Vazir-Bold.eot?47c7f9c48f3d93d5daa15b4eaef5f318#iefix")
+      format("embedded-opentype"),
+    url("../fonts/vazir/Vazir-Bold.woff?748f32d92cf483f2eb5b46ca95fc4e40")
+      format("woff"),
+    url("../fonts/vazir/Vazir-Bold.ttf?7a8ce4ce3830de1cad8102c5f6184fa9")
+      format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../fonts/vazir/Vazir-Black.eot?2c1dc292d0f8e13211b9c3ee07e20db1");
+  src:
+    url("../fonts/vazir/Vazir-Black.eot?2c1dc292d0f8e13211b9c3ee07e20db1#iefix")
+      format("embedded-opentype"),
+    url("../fonts/vazir/Vazir-Black.woff?55f5d2f7e4f2366a1e68cbff11a6612c")
+      format("woff"),
+    url("../fonts/vazir/Vazir-Black.ttf?85e3ad2f0b571622ff307e75447d55ee")
+      format("truetype");
+  font-weight: 700;
+  font-style: normal;
 }

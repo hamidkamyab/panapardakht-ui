@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         yekanbakh: ["yekanbakh"],
+        vazir: ["vazir"],
       },
       colors: {
         main: {
