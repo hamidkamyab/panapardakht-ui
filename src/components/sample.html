@@ -1,0 +1,124 @@
+<section class="py-10 sm:py-16 lg:py-24">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      نمونه فروشگاه‌های پانا-پی
+    </h2>
+    
+    <script type="application/json" id="sample_data">
+      {
+        "sample": [
+          {
+            "id": 1,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 2,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 3,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 4,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 5,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 6,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 7,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 8,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          },
+          {
+            "id": 9,
+            "title": "اولین باش",
+            "description": "جای فروشگاه شما اینجاست!",
+            "logo": "/images/shop_logo.webp",
+            "url": ""
+          }
+        ]
+      }
+    </script>
+
+    <div  x-data="{sample: [] }" x-init="sample = JSON.parse(document.getElementById('sample_data').textContent).sample" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-8 lg:px-0">
+      <template x-for="(item,index) in sample" :key="item.id">
+        <a :href="item.url">
+          <div
+            class="flex items-center justify-between p-4 border rounded-lg bg-white shadow hover:shadow-lg"
+          >
+            <div class="flex items-center">
+              <img
+                :src="item.logo"
+                alt="logo"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="mx-4">
+                <h3 class="text-lg font-bold" x-text="item.title" ></h3>
+                <p class="text-sm text-gray-500 line-clamp-1" x-text="item.description">
+                </p>
+              </div>
+            </div>
+            <button class="text-gray-500 hover:text-gray-700" aria-label="مشاهده نمونه فروشگاه">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="size-8 lg:size-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+          </div>
+        </a>
+      </template>
+      
+      
+    </div>
+<!-- 
+    <div class="text-center mt-6">
+      <button
+        class="px-6 py-2 bg-primary font-bold text-white rounded-md hover:bg-primary-700"
+      >
+        مشاهده همه
+      </button>
+    </div> -->
+  </section>

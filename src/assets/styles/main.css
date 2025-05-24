@@ -1,0 +1,28 @@
+@import "./fonts.css";
+
+ 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-200/30 font-yekanbakh;
+  }
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .feature-card {
+    @apply flex flex-col justify-center items-center gap-4 bg-gray-100 py-5 rounded-lg;
+    box-shadow: -3px -3px 3px 2px #ffffff,3px 3px 3px 2px #ececec;
+    
+  }
+
+  .pro_mb_camera {
+    background: #FFF;
+    background: radial-gradient(circle,rgba(200, 200, 200, 0.9) 5%, rgba(75, 75, 75, 1) 15%, rgba(0, 0, 0, 1) 100%);
+  }
+}
