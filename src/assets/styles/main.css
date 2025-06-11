@@ -17,25 +17,30 @@
 @layer components {
 
 
-.gradient-border-mask {
+.gradient-border-mask-feature ,.gradient-border-mask-btn {
   position: relative;
   padding: 0.8rem 1rem;
   backdrop-filter: blur(10px);
-  overflow: hidden !important;
 }
-
-.gradient-border-mask::before {
+.gradient-border-mask-btn {  overflow: hidden !important;
+}
+.gradient-border-mask-feature::before ,.gradient-border-mask-btn::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 10px;
   border: 2px solid transparent;
-  background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box;
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
+.gradient-border-mask-feature::before{
+  background: linear-gradient(140deg, #ececec,#bbb) border-box;
+}
 
-.gradient-border-mask::after{
+.gradient-border-mask-feature:hover > .gradient-border-mask-feature::before ,.gradient-border-mask-feature:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box; }
+
+
+.gradient-border-mask-feature::after ,.gradient-border-mask-btn::after{
   content: "";
   display: block;
   top: 0;
@@ -45,25 +50,44 @@
   opacity: 0;
   border-radius: 10px;
   position: absolute;
-  background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box;
   transition: .2s;
   -o-transition: .2s;
   -webkit-transition: .2s;
   -ms-transition: .2s;
 }
-.gradient-border-mask:hover{
+.gradient-border-mask-btn::after{
+  background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box;
+
+}
+.gradient-border-mask-feature::after{
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.gradient-border-mask-btn:hover,.gradient-border-mask-btn:hover::after{
   color:#fff !important;
+    opacity: 1;
     transition: .2s;
   -o-transition: .2s;
   -webkit-transition: .2s;
   -ms-transition: .2s;
 }
-.gradient-border-mask:hover::after{
-  opacity: 1;
-  transition: .2s;
-  -o-transition: .2s;
-  -webkit-transition: .2s;
-  -ms-transition: .2s;
+
+
+.capabilities::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 100%;
+    background-image: url('../../../images/globe-1.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.vd_patern{
+    background-image: url('../../../images/pana-pattern-blue.png');
+    background-repeat: repeat;
 }
 
 }
