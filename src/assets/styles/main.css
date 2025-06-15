@@ -37,8 +37,10 @@
   background: linear-gradient(140deg, #ececec,#bbb) border-box;
 }
 
-.gradient-border-mask-feature:hover > .gradient-border-mask-feature::before ,.gradient-border-mask-feature:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box; }
-
+.gradient-border-mask-feature:hover > .gradient-border-mask-feature::before, .gradient-border-mask-feature.active::before ,.gradient-border-mask-feature:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #234cdf,#00aeff) border-box; }
+.gradient-border-mask-feature.active::before{
+  border: 3px solid transparent;
+}
 
 .gradient-border-mask-feature::after ,.gradient-border-mask-btn::after{
   content: "";
@@ -56,7 +58,7 @@
   -ms-transition: .2s;
 }
 .gradient-border-mask-btn::after{
-  background: linear-gradient(140deg, #98bcf8,#7d23e0) border-box;
+  background: linear-gradient(140deg, #234cdf,#00aeff) border-box;
 
 }
 .gradient-border-mask-feature::after{
