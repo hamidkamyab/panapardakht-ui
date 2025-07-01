@@ -9,176 +9,200 @@
   </div>
 
   <!-- features -->
-  <div
-    class="grid grid-cols-3 grid-rows-2 gap-16 mt-10 py-20 max-w-5xl mx-auto leading-[30px] relative">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-8 sm:px-20 md:px-0 md:gap-12 lg:gap-16 py-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto relative">
 
-    <div
-      class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-0 [&>div]:top-0 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-1/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-blue-600 [&>div]:opacity-15 [&>div]:blur-[40px]">
-      <div class="!z-10">
 
-      </div>
-    </div>
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-green-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-green-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow green-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon green-shadow">
+          <span class="block size-full bg-green-100 text-green-500  rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="none" />
+              <path fill="currentColor"
+                d="M10.758 15.192q.465.466 1.194.424q.729-.041 1.064-.524l5.253-7.323l-7.361 5.216q-.502.334-.559 1.038t.409 1.17M12 5q1.379 0 2.51.336q1.132.335 2.256 1.025l-.92.623q-.883-.482-1.828-.733T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.9-.232-1.894t-.734-1.852l.624-.92q.73 1.252 1.033 2.356T21 13.888q.006 1.29-.287 2.408q-.292 1.118-.91 2.254q-.12.2-.365.325T18.9 19H5.1q-.275 0-.51-.134q-.234-.135-.394-.393q-.496-.875-.846-1.974T3 14q0-1.844.7-3.481q.699-1.637 1.909-2.867T8.471 5.71T12 5m.04 6.96"
+                stroke-width="0.4" stroke="currentColor" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
+          <span class="text-lg block text-center font-bold mt-4">
+            سریع و رایگان
+          </span>
 
-    <div
-      class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:-left-10 [&>div]:top-1/2 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-1/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-green-600 [&>div]:opacity-15 [&>div]:blur-[40px]">
-      <div class="!z-10">
-
-      </div>
-    </div>
-
-    <div
-      class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-60 [&>div]:top-0 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-2/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-rose-600 [&>div]:opacity-10 [&>div]:blur-[40px]">
-      <div class="!z-10">
-
-      </div>
-    </div>
-
-    <!-- Row 1 -->
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-green-100 text-green-500  rounded-full p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 24 24"><rect width="24" height="24" fill="none" /><path
-              fill="currentColor"
-              d="M10.758 15.192q.465.466 1.194.424q.729-.041 1.064-.524l5.253-7.323l-7.361 5.216q-.502.334-.559 1.038t.409 1.17M12 5q1.379 0 2.51.336q1.132.335 2.256 1.025l-.92.623q-.883-.482-1.828-.733T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.9-.232-1.894t-.734-1.852l.624-.92q.73 1.252 1.033 2.356T21 13.888q.006 1.29-.287 2.408q-.292 1.118-.91 2.254q-.12.2-.365.325T18.9 19H5.1q-.275 0-.51-.134q-.234-.135-.394-.393q-.496-.875-.846-1.974T3 14q0-1.844.7-3.481q.699-1.637 1.909-2.867T8.471 5.71T12 5m.04 6.96"
-              stroke-width="0.4" stroke="currentColor" /></svg>
-        </span>
-      </div>
-      <span class="text-lg block text-center font-bold mt-4">
-        سریع و رایگان
-      </span>
-
-      <p class="text-slate-900">
-        بدون نیاز به پرداخت هیچ هزینه اضافی در سریع ترین زمان ممکن تجارت خود را
-        آغاز کنید
-      </p>
-    </div>
-
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-cyan-100/75 text-cyan-500 rounded-full p-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 24 24"><rect width="24" height="24" fill="none" /><path
-              fill="currentColor"
-              d="M14.49 6.83a.49.49 0 0 1 .68 0L18.09 10a.25.25 0 0 1 0 .35L16.47 12a.75.75 0 0 0 .53 1.25h5.5a.76.76 0 0 0 .75-.75V7A.75.75 0 0 0 22 6.47l-1.44 1.41a.21.21 0 0 1-.18.07a.25.25 0 0 1-.18-.08l-3.48-3.73a2.52 2.52 0 0 0-3.38-.24l-2.88 2.31a.51.51 0 0 1-.67 0L4.06.44a1.5 1.5 0 0 0-2.12 2.12l6.37 6.37a2.5 2.5 0 0 0 3.33.18ZM11.5 22.5A1.5 1.5 0 0 0 10 21H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m11 0A1.5 1.5 0 0 0 21 21h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m1-4.5a1.5 1.5 0 0 0-1.5-1.5h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5M9 19.5a1.5 1.5 0 0 0 0-3H2a1.5 1.5 0 0 0 0 3Zm1-7.5H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 0-3"
-              stroke-width="0.4" stroke="currentColor" /></svg>
-        </span>
-      </div>
-      <span class="text-lg block text-center font-bold mt-4">
-        پایین ترین تعرفه
-      </span>
-
-      <p class="text-slate-900">
-        همواره از ابتدا تاکنون پایین ترین نرخ کارمزد را برای تمامی خدمات ارائه
-        نموده ایم
-      </p>
-    </div>
-
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-indigo-200/75 text-indigo-500 rounded-full p-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 16 16"><rect width="16" height="16" fill="none" /><path
-              fill="currentColor" fill-rule="evenodd"
-              d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707l1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562l-1.414-1.414l1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56l-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
-              stroke-width="0.4" stroke="currentColor" /></svg>
-        </span>
+          <p class="text-slate-800 text-justify">
+            بدون نیاز به پرداخت هیچ هزینه اضافی در سریع ترین زمان ممکن تجارت خود را
+            آغاز کنید
+          </p>
+        </div>
       </div>
 
-      <span class="text-lg block text-center font-bold mt-4">
-        پلاگین‌های متنوع
-      </span>
-
-      <p class="text-slate-900">
-        پلاگین های موجود ، مطابق با نیاز کاربران به پاناپال اضافه گردیده و این
-        روند ادامه خواهد داشت
-      </p>
     </div>
 
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-fuchsia-200/60 text-fuchsia-500  rounded-full p-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 32 32"><rect width="32" height="32" fill="none" /><path
-              fill="currentColor"
-              d="M28 16v6H4V6h7V4H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8v4H8v2h16v-2h-4v-4h8a2 2 0 0 0 2-2v-6ZM18 28h-4v-4h4Z" /><path
-              fill="currentColor"
-              d="M18 18h-.01a1 1 0 0 1-.951-.725L15.246 11H11V9h5a1 1 0 0 1 .962.725l1.074 3.76l3.009-9.78A1.01 1.01 0 0 1 22 3a.98.98 0 0 1 .949.684L24.72 9H30v2h-6a1 1 0 0 1-.949-.684l-1.013-3.04l-3.082 10.018A1 1 0 0 1 18 18" /></svg>
-        </span>
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-cyan-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-cyan-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow cyan-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon cyan-shadow">
+          <span class="block size-full bg-cyan-100/75 text-cyan-500 rounded-full p-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24">
+              <rect width="24" height="24" fill="none" />
+              <path fill="currentColor"
+                d="M14.49 6.83a.49.49 0 0 1 .68 0L18.09 10a.25.25 0 0 1 0 .35L16.47 12a.75.75 0 0 0 .53 1.25h5.5a.76.76 0 0 0 .75-.75V7A.75.75 0 0 0 22 6.47l-1.44 1.41a.21.21 0 0 1-.18.07a.25.25 0 0 1-.18-.08l-3.48-3.73a2.52 2.52 0 0 0-3.38-.24l-2.88 2.31a.51.51 0 0 1-.67 0L4.06.44a1.5 1.5 0 0 0-2.12 2.12l6.37 6.37a2.5 2.5 0 0 0 3.33.18ZM11.5 22.5A1.5 1.5 0 0 0 10 21H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m11 0A1.5 1.5 0 0 0 21 21h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m1-4.5a1.5 1.5 0 0 0-1.5-1.5h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5M9 19.5a1.5 1.5 0 0 0 0-3H2a1.5 1.5 0 0 0 0 3Zm1-7.5H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 0-3"
+                stroke-width="0.4" stroke="currentColor" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
+          <span class="text-lg block text-center font-bold mt-4">
+            پایین ترین تعرفه
+          </span>
+
+          <p class="text-slate-800 text-justify">
+            همواره از ابتدا تاکنون پایین ترین نرخ کارمزد را برای تمامی خدمات ارائه
+            نموده ایم
+          </p>
+        </div>
       </div>
 
-      <span class="text-lg block text-center font-bold mt-4">
-        مانیتورینگ
-      </span>
-
-      <p class="text-slate-900">
-        بررسی وضعیت شبکه به صورت سیستمی ( خودکار ) و نیروی انسانی و با سرورهای
-        داخلی و خارجی انجام می گیرد که نتیجه آن به حداقل رسیدن اختلالات می باشد
-      </p>
     </div>
 
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-pink-200 text-pink-500 rounded-full p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 1024 1024"><rect width="1024" height="1024"
-              fill="none" /><path fill="currentColor"
-              d="M512 64L128 192v384c0 212.1 171.9 384 384 384s384-171.9 384-384V192zm312 512c0 172.3-139.7 312-312 312S200 748.3 200 576V246l312-110l312 110z"
-              stroke-width="0.2" stroke="currentColor" /><path
-              fill="currentColor"
-              d="M378.4 475.1a35.91 35.91 0 0 0-50.9 0a35.91 35.91 0 0 0 0 50.9l129.4 129.4l2.1 2.1a33.98 33.98 0 0 0 48.1 0L730.6 434a33.98 33.98 0 0 0 0-48.1l-2.8-2.8a33.98 33.98 0 0 0-48.1 0L483 579.7z"
-              stroke-width="0.2" stroke="currentColor" /></svg>
-        </span>
-      </div>
-      <span class="text-lg block text-center font-bold mt-4">
-        ایمن و مطمئن
-      </span>
 
-      <p class="text-slate-900">
-        راستی آزمایی اطلاعات در حین استفاده از پاناپال نکته کلیدی محسوب می شود
-        که حاصل رعایت متدهای امنیتی مطابق با استاندارهای روز دنیا می باشد.
-      </p>
-    </div>
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-indigo-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-indigo-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow indigo-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon indigo-shadow">
+          <span class="block size-full bg-indigo-200/75 text-indigo-500 rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 16 16">
+              <rect width="16" height="16" fill="none" />
+              <path fill="currentColor" fill-rule="evenodd"
+                d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707l1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562l-1.414-1.414l1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56l-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
+                stroke-width="0.4" stroke="currentColor" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
 
-    <div
-      class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-      <div
-        class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-        <span
-          class="block size-full bg-amber-100 text-amber-500 rounded-full p-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-            viewBox="0 0 48 48"><rect width="48" height="48" fill="none" /><g
-              fill="none" stroke="currentColor" stroke-linecap="round"
-              stroke-linejoin="round" stroke-width="2.5"><path
-                d="M24 45c14.5 0 20-3 20-14M6.803 35.783C5.119 35.362 4 33.825 4 32.09v-6.178c0-1.736 1.119-3.274 2.803-3.695c1.626-.407 3.762-.864 5.862-1.084c1.438-.151 2.704.692 2.943 2.117c.21 1.244.392 3.091.392 5.75c0 2.66-.183 4.507-.392 5.75c-.24 1.425-1.505 2.268-2.943 2.118c-2.1-.22-4.236-.678-5.862-1.085" /><path
-                d="M41.197 35.783C42.881 35.362 44 33.825 44 32.09v-6.178c0-1.736-1.119-3.274-2.803-3.695c-1.626-.407-3.762-.864-5.862-1.084c-1.438-.151-2.704.692-2.943 2.117C32.182 24.494 32 26.341 32 29c0 2.66.183 4.507.392 5.75c.24 1.425 1.505 2.268 2.943 2.118c2.1-.22 4.236-.678 5.862-1.085" /><path
-                d="M44 25.911V23c0-11.046-8.954-20-20-20S4 11.954 4 23v2.911m33.956-4.398C37.386 14.51 31.356 9 24 9s-13.386 5.51-13.956 12.513" /></g></svg>
-        </span>
+          <span class="text-lg block text-center font-bold mt-4">
+            پلاگین‌های متنوع
+          </span>
+
+          <p class="text-slate-800 text-justify">
+            پلاگین های موجود ، مطابق با نیاز کاربران به پاناپال اضافه گردیده و این
+            روند ادامه خواهد داشت
+          </p>
+        </div>
       </div>
 
-      <span class="text-lg block text-center font-bold mt-4">
-        پشتیبانی
-      </span>
-
-      <p class="text-slate-900">
-        از ابتدا تا انتها همواره در کنار شما خواهیم بود و کلیه سوالات شما را
-        پاسخ و کلیه مشکلات شما را رفع خواهیم نمود
-      </p>
     </div>
+
+
+
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-fuchsia-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-fuchsia-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow fuchsia-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon fuchsia-shadow">
+          <span class="block size-full bg-fuchsia-200/60 text-fuchsia-500  rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 32 32">
+              <rect width="32" height="32" fill="none" />
+              <path fill="currentColor"
+                d="M28 16v6H4V6h7V4H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8v4H8v2h16v-2h-4v-4h8a2 2 0 0 0 2-2v-6ZM18 28h-4v-4h4Z" />
+              <path fill="currentColor"
+                d="M18 18h-.01a1 1 0 0 1-.951-.725L15.246 11H11V9h5a1 1 0 0 1 .962.725l1.074 3.76l3.009-9.78A1.01 1.01 0 0 1 22 3a.98.98 0 0 1 .949.684L24.72 9H30v2h-6a1 1 0 0 1-.949-.684l-1.013-3.04l-3.082 10.018A1 1 0 0 1 18 18" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
+
+          <span class="text-lg block text-center font-bold mt-4">
+            مانیتورینگ
+          </span>
+
+          <p class="text-slate-800 text-justify">
+            بررسی وضعیت شبکه به صورت سیستمی ( خودکار ) و نیروی انسانی و با سرورهای
+            داخلی و خارجی انجام می گیرد که نتیجه آن به حداقل رسیدن اختلالات می باشد
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-pink-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-pink-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow pink-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon pink-shadow">
+          <span class="block size-full bg-pink-200 text-pink-500 rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 1024 1024">
+              <rect width="1024" height="1024" fill="none" />
+              <path fill="currentColor"
+                d="M512 64L128 192v384c0 212.1 171.9 384 384 384s384-171.9 384-384V192zm312 512c0 172.3-139.7 312-312 312S200 748.3 200 576V246l312-110l312 110z"
+                stroke-width="0.2" stroke="currentColor" />
+              <path fill="currentColor"
+                d="M378.4 475.1a35.91 35.91 0 0 0-50.9 0a35.91 35.91 0 0 0 0 50.9l129.4 129.4l2.1 2.1a33.98 33.98 0 0 0 48.1 0L730.6 434a33.98 33.98 0 0 0 0-48.1l-2.8-2.8a33.98 33.98 0 0 0-48.1 0L483 579.7z"
+                stroke-width="0.2" stroke="currentColor" />
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
+
+          <span class="text-lg block text-center font-bold mt-4">
+            ایمن و مطمئن
+          </span>
+
+          <p class="text-slate-800 text-justify">
+            راستی آزمایی اطلاعات در حین استفاده از پاناپال نکته کلیدی محسوب می شود
+            که حاصل رعایت متدهای امنیتی مطابق با استاندارهای روز دنیا می باشد.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+    before:content[''] before:absolute before:size-full before:border-2 before:border-amber-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+    after:content[''] after:absolute after:size-24  after:border-[6px] after:border-amber-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+    after:-bottom-[2px] after:-right-[2px]">
+      <div class="feature-shadow amber-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+        <div class="p-1.5 size-20 rounded-full z-20 feature-icon amber-shadow">
+          <span class="block size-full bg-amber-100 text-amber-500 rounded-full p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 48 48">
+              <rect width="48" height="48" fill="none" />
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <path
+                  d="M24 45c14.5 0 20-3 20-14M6.803 35.783C5.119 35.362 4 33.825 4 32.09v-6.178c0-1.736 1.119-3.274 2.803-3.695c1.626-.407 3.762-.864 5.862-1.084c1.438-.151 2.704.692 2.943 2.117c.21 1.244.392 3.091.392 5.75c0 2.66-.183 4.507-.392 5.75c-.24 1.425-1.505 2.268-2.943 2.118c-2.1-.22-4.236-.678-5.862-1.085" />
+                <path
+                  d="M41.197 35.783C42.881 35.362 44 33.825 44 32.09v-6.178c0-1.736-1.119-3.274-2.803-3.695c-1.626-.407-3.762-.864-5.862-1.084c-1.438-.151-2.704.692-2.943 2.117C32.182 24.494 32 26.341 32 29c0 2.66.183 4.507.392 5.75c.24 1.425 1.505 2.268 2.943 2.118c2.1-.22 4.236-.678 5.862-1.085" />
+                <path
+                  d="M44 25.911V23c0-11.046-8.954-20-20-20S4 11.954 4 23v2.911m33.956-4.398C37.386 14.51 31.356 9 24 9s-13.386 5.51-13.956 12.513" />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="flex flex-col gap-4 items-center">
+
+          <span class="text-lg block text-center font-bold mt-4">
+            پشتیبانی
+          </span>
+
+          <p class="text-slate-800 text-justify">
+            از ابتدا تا انتها همواره در کنار شما خواهیم بود و کلیه سوالات شما را
+            پاسخ و کلیه مشکلات شما را رفع خواهیم نمود
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 </section>

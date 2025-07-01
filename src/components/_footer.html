@@ -1,7 +1,7 @@
 <footer class="py-12 bg-gradient-to-r to-blue-600 from-violet-700">
 
   <div>
-    <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-3 sm:grid-cols-2 mx-auto">
+    <div class="lg:max-w-5xl md:max-w-2xl px-4 sm:px-6 text-gray-800 grid lg:grid-cols-3 grid-cols-1 mx-auto">
       <div class="p-5">
         <div class="">
           <img src="/images/footerlogo-1.png" alt="">
@@ -181,4 +181,63 @@
   </div>
 
   <!-- Credit: HamidKamyab -->
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const swiperWrapper = document.getElementById("swiper-wrapper");
+    const swiperSlides = swiperWrapper.children;
+    const slideCount = swiperSlides.length;
+
+    let currentIndex = 0;
+    let slideWidth = swiperSlides[0].clientWidth;
+    
+    function cloneSlides(){
+        const slides = Array.from(swiperSlides);
+        slides.map(item=>{
+            const clone = item.cloneNode(true);
+            swiperWrapper.append(clone)
+        })
+        slides.map(item=>{
+            const clone = item.cloneNode(true);
+            swiperWrapper.append(clone)
+        })
+    }
+    cloneSlides()
+    function swiper(){
+        swiperWrapper.style.transition =  "transform 0.4s ease";
+        if(currentIndex < slideCount + 1){
+            swiperWrapper.style.transform= `translateX(${currentIndex * slideWidth}px)`;
+            currentIndex +=1;
+
+        }else{
+            swiperWrapper.style.transition =  "none";
+            swiperWrapper.style.transform= `translateX(${-0}px)`;
+            currentIndex = 1;
+
+            // بلافاصله حرکت بده با transition
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    swiperWrapper.style.transition = "transform 0.4s ease";
+                    swiperWrapper.style.transform = `translateX(${currentIndex * slideWidth}px)`;
+                    currentIndex += 1;
+                });
+            });
+        }
+        
+
+    }
+
+    setInterval(swiper, 3000);
+    
+})
+
+</script>
+
+
+
+
+
 </footer>
