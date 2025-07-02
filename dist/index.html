@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
@@ -20,12 +20,12 @@
     <meta property="og:title" content="پاناپی | ساخت فروشگاه اینترنتی آسان" />
     <meta property="og:description" content="ساخت فروشگاه حرفه‌ای در چند دقیقه با پاناپی. بدون نیاز به برنامه‌نویسی، با امکانات کامل برای فروش آنلاین." />
     <meta property="og:url" content="https://paanapay.ir/" />
-    <meta property="og:image" content="/assets/logo-C6StkQjK.svg" /> 
+    <meta property="og:image" content="./assets/images/logo.svg" /> 
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="پاناپی | ساخت فروشگاه اینترنتی در چند دقیقه" />
     <meta name="twitter:description" content="با پاناپی فروشگاه آنلاین خود را سریع، ساده و حرفه‌ای بسازید. بدون کدنویسی!" />
-    <meta name="twitter:image" content="/assets/logo-C6StkQjK.svg" />
+    <meta name="twitter:image" content="./assets/images/logo.svg" />
 
 
     <!-- Google tag (gtag.js) -->
@@ -38,12 +38,12 @@
       gtag('config', 'G-224KTB3SQX');
     </script>
 
-    <script type="module" crossorigin src="/assets/index-D4fihyDW.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Bn9p5AwA.css">
+    <script type="module" crossorigin src="./index-Co4qUarm.js"></script>
+    <link rel="stylesheet" crossorigin href="./index-Cz_556_z.css">
   </head>
   <body class="bg-white overflow-x-hidden">
     
-    <header>
+    <header class="w-screen">
         <div class="absolute inset-0 z-0 flex items-start top-0">
                <div
                 class="absolute inset-0 -z-10 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-0 [&>div]:top-0 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-1/3 [&>div]:w-1/4 [&>div]:rounded-full [&>div]:bg-blue-600 [&>div]:opacity-30 [&>div]:blur-[100px]"
@@ -82,101 +82,188 @@
     
     
         <!-- navbar -->
-        <nav  x-data="{open:false}" class="fixed w-full z-40 top-0 bg-white/20 backdrop-blur-lg">
-          <div class="mx-auto px-4 py-4 flex justify-between items-center max-w-7xl relative z-10">
+        <nav  x-data="nav()" x-init="init()" class="fixed w-screen z-40 top-0 bg-white/20 backdrop-blur-lg left-0">
+          <div class="px-4 py-4 flex justify-between items-center w-screen max-w-7xl mx-auto relative z-10">
             <div>
-              <a class="block w-24"><img src="/assets/logo-C6StkQjK.svg" /></a>
+              <a class="block w-24"><img src="images/logo.svg" /></a>
             </div>
     
-            <div class="flex items-center gap-8 font-medium text-stone-800">
-              <ul x-data="{openSubmenu:0}" class="flex items-center gap-6">
-                <li>
-                  <a href="" class="block py-1 text-center">
-                    مستندات
-                  </a>
-                </li>
+            <div class="flex items-center gap-8 relative">
+              <div
+              x-show="open||isDesktop" 
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 transform scale-95"
+              x-transition:enter-end="opacity-100 transform scale-100"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 transform scale-100"
+              x-transition:leave-end="opacity-0 transform scale-95"
+              class="font-medium text-stone-800 absolute top-14 bg-white/60 backdrop-blur-md -left-4 py-8 border-y border-blue-600/40
+              shadow-md shadow-blue-600/20 lg:shadow-none
+              lg:bg-transparent lg:relative lg:top-0 lg:left-0 lg:border-0 lg:py-0">
     
-                <li>
-                  <a href="" class="block py-1 text-center">
-                    ماژول و افزونه ها
-                  </a>
-                </li>
+                <ul x-data="{openSubmenu:0}"  @click.outside="openSubmenu = 0" class="flex flex-col lg:flex-row w-screen lg:w-auto items-center gap-6">
+                  <li class="w-[calc(100%-10px)] lg:w-auto">
+                    <a href="" class="block py-1 text-center">
+                      مستندات
+                    </a>
+                  </li>
     
-                <li>
-                  <a href="" class="block py-1 text-center">
-                    تماس با ما
-                  </a>
-                </li>
+                  <li class="w-[calc(100%-10px)] lg:w-auto">
+                    <a href="" class="block py-1 text-center">
+                      ماژول و افزونه ها
+                    </a>
+                  </li>
+                  <li @click="openSubmenu !== 1? openSubmenu = 1 : openSubmenu = 0" class="w-[calc(100%-10px)] lg:w-auto group/submenu relative">
+                    <a href="javascript:void(0)" class="block py-1 text-center">
+                      محصولات
+                    </a>
+                      
+                    <div 
+                      x-show="openSubmenu === 1" 
+                      x-transition:enter="transition ease-out duration-300"
+                      x-transition:enter-start="opacity-0 transform scale-95"
+                      x-transition:enter-end="opacity-100 transform scale-100"
+                      x-transition:leave="transition ease-in duration-200"
+                      x-transition:leave-start="opacity-100 transform scale-100"
+                      x-transition:leave-end="opacity-0 transform scale-95"
     
-                <li>
-                  <a href="" class="block py-1 text-center">
-                    اخبار
-                  </a>
-                </li>
+                      class="relative lg:absolute lg:top-16 lg:-right-4 text-sm after:hidden lg:after:block
+                      after:absolute after:-top-[10px] lg:after:right-6 after:content-[''] after:w-0 after:h-0 
+                      after:border-solid after:border-[10px] after:border-t-0 after:border-transparent after:border-b-gray-400">
     
-                <li @click="openSubmenu !== 5? openSubmenu = 5 : openSubmenu = 0" class="group/submenu relative">
-                  <a href="javascript:void(0)" class="block py-1 text-center">
-                    بیشتر
-                  </a>
-                    
-                  <div 
-                    x-show="openSubmenu === 5" 
-                    @click.outside="openSubmenu = 0"
-                    x-transition:enter="transition ease-out duration-300"
-                    x-transition:enter-start="opacity-0 transform scale-95"
-                    x-transition:enter-end="opacity-100 transform scale-100"
-                    x-transition:leave="transition ease-in duration-200"
-                    x-transition:leave-start="opacity-100 transform scale-100"
-                    x-transition:leave-end="opacity-0 transform scale-95"
-                    class="absolute top-16 -right-4 text-sm
-                    after:absolute after:-top-[10px] after:right-6 after:content-[''] after:w-0 after:h-0 
-                    after:border-solid after:border-[10px] after:border-t-0 after:border-transparent after:border-b-gray-400 ">
+                      <ul class="overflow-hidden bg-white/20 backdrop-blur-lg border border-gray-400 rounded-md w-full lg:w-auto">
+                  
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          درگاه پرداخت اختصاصی
+                        </a>
+                      </li>
     
-                    <ul class="overflow-hidden bg-white/20 backdrop-blur-lg border border-gray-400 rounded-md">
-                
-                    <li class="">
-                      <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
-                        تعرفه ها
-                      </a>
-                    </li>
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          درگاه پرداخت اشتراکی
+                        </a>
+                      </li>
     
-                     <li class="">
-                      <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
-                        پیگیری تراکنش
-                      </a>
-                    </li>
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          فاکتور آنلاین
+                        </a>
+                      </li>
     
-                     <li class="">
-                      <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
-                        لیست نمایندگان و بازاریابان
-                      </a>
-                    </li>
-                  </ul>
-                  </div>
-                </li>
-              </ul>
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          لینک پرداخت اختصاصی
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+                  </li>
+                  <li class="w-[calc(100%-10px)] lg:w-auto">
+                    <a href="" class="block py-1 text-center">
+                      تماس با ما
+                    </a>
+                  </li>
     
+                  <li class="w-[calc(100%-10px)] lg:w-auto">
+                    <a href="" class="block py-1 text-center">
+                      اخبار
+                    </a>
+                  </li>
     
-              <div class="gradient-border-mask-btn w-[120px] h-[40px]">
+                  <li @click="openSubmenu !== 2? openSubmenu = 2 : openSubmenu = 0" class="w-[calc(100%-10px)] lg:w-auto group/submenu relative">
+                    <a href="javascript:void(0)" class="block py-1 text-center">
+                      بیشتر
+                    </a>
+                      
+                    <div 
+                      x-show="openSubmenu === 2" 
+                      x-transition:enter="transition ease-out duration-300"
+                      x-transition:enter-start="opacity-0 transform scale-95"
+                      x-transition:enter-end="opacity-100 transform scale-100"
+                      x-transition:leave="transition ease-in duration-200"
+                      x-transition:leave-start="opacity-100 transform scale-100"
+                      x-transition:leave-end="opacity-0 transform scale-95"
+                      class="relative lg:absolute lg:top-16 lg:-right-4 text-sm after:hidden lg:after:block
+                      after:absolute after:-top-[10px] after:right-6 after:content-[''] after:w-0 after:h-0 
+                      after:border-solid after:border-[10px] after:border-t-0 after:border-transparent after:border-b-gray-400">
+    
+                      <ul class="overflow-hidden bg-white/20 backdrop-blur-lg border border-gray-400 rounded-md">
+                  
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          تعرفه ها
+                        </a>
+                      </li>
+    
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          پیگیری تراکنش
+                        </a>
+                      </li>
+    
+                      <li class="">
+                        <a href="" class="whitespace-nowrap px-4 py-2 hover:bg-white/50 transition duration-200 block">
+                          لیست نمایندگان و بازاریابان
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+                  </li>
+                </ul>
+    
+              </div>
+    
+             <div class="flex items-center gap-2">
+               <div class="gradient-border-mask-btn w-[120px] h-[40px]">
                   <a href="#" class="absolute z-20 size-full text-sm block top-0 left-0 text-center leading-[40px]">
                      کنترل پنل کاربری
                   </a>
               </div>
     
-              
+              <span class="lg:hidden w-px h-6 bg-slate-300 block"></span>
+    
+              <button class="lg:hidden" role="button" @click="open = !open">
+                <span class="size-6 block text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" x-show="!open" class="size-full" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" x-show="open" class="size-full" viewBox="0 0 36 36"><path fill="currentColor" d="m19.41 18l8.29-8.29a1 1 0 0 0-1.41-1.41L18 16.59l-8.29-8.3a1 1 0 0 0-1.42 1.42l8.3 8.29l-8.3 8.29A1 1 0 1 0 9.7 27.7l8.3-8.29l8.29 8.29a1 1 0 0 0 1.41-1.41Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                </span>
+              </button>
+             </div>
             </div>
+    
     
           </div>
         </nav>
         <!-- navbar -->
       </header>
+    
+      <script>
+    function nav() {
+      return {
+        open: false,
+        isDesktop: window.innerWidth >= 1024,
+        init() {
+          const media = window.matchMedia("(min-width: 1024px)");
+          this.isDesktop = media.matches;
+    
+          media.addEventListener("change", (e) => {
+            this.isDesktop = e.matches;
+            if (this.isDesktop) {
+              this.open = false; // بستن منو وقتی به موبایل سوییچ می‌کنی
+            }
+          });
+        }
+      }
+    }
+    </script>
     <main class="w-full mx-auto ">
       <!-- hero section -->
       <div id="hero-section" class=" mx-auto ">
         <section
         class="bg-transparent flex flex-col relative z-20 items-center pt-36 pb-20"
         >
-        <div class="max-w-5xl px-6 flex flex-col lg:flex-row relative">
+        <div class="lg:max-w-5xl md:max-w-2xl max-w-xl px-6 flex flex-col lg:flex-row relative">
           <!-- Left Section: Text Content -->
           <div class="w-full lg:w-1/2 text-center lg:text-start">
             <h1
@@ -190,7 +277,7 @@
             <p class="text-md sm:text-xl text-gray-500 ">
               پاناپال به‌عنوان پرداخت‌یار رسمی شاپرک و بانک مرکزی ایران، با در اختیار قراردادن خدماتی نوین در صنعت پرداخت الکترونیک، روزانه میزبان چندین هزار تراکنش در بستر وب ایران است.
             </p>
-            <div class="flex flex-col sm:flex-row mb-8 mt-8 sm:justify-start items-center">
+            <div class="flex flex-col sm:flex-row mb-8 mt-8 sm:justify-center lg:justify-start items-center">
         
               <a
                 href="#" class="text-white bg-gradient-to-br from-[#234cdf] to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2">
@@ -208,13 +295,13 @@
           </div>
         
           <!-- Right Section: Image Content -->
-          <div class="hidden md:block w-full lg:w-1/2">
-            <div class="flex relative justify-center lg:justify-end">
+          <div class="hidden md:justify-center w-full lg:w-1/2 md:flex lg:block">
+            <div class="flex relative justify-center lg:justify-end w-full">
               <!-- First Image (smaller and on top) -->
               <div class="relative z-10 lg:-translate-x-16">
                 
                 <img
-                  src="/images/cards_hero.png"
+                  src="./images/cards_hero.png"
                   alt=""
                   class="p-6 shadow-gray-300 m-auto transform scale-90 rounded-xl brightness-[1.15]"
                 />
@@ -230,46 +317,47 @@
 
       <!-- partners section -->
       <div id="partners-section" class="w-full  mx-auto ">
-        <section
-        class="bg-gradient-to-t to-[#234cdf] from-[#2384df] flex flex-col relative z-20 items-center py-8"
-        >
-        <div class="py-6 flex flex-col relative gap-14">
-          <h3 class="text-slate-100 font-medium text-center">
-                همراه با شرکای تجاری، در تلاشیم بهترین زیرساخت را برای آسودگی خاطر شما فراهم کنیم.
-          </h3>
-          <div class="w-full">
+        <section class="bg-gradient-to-t to-[#234cdf] from-[#2384df] flex flex-col relative z-20 items-center py-12">
+            <div class="relative gap-14 w-full h-40">
+                <h3 class="text-slate-100 font-medium text-center">
+                    همراه با شرکای تجاری، در تلاشیم بهترین زیرساخت را برای آسودگی خاطر شما فراهم کنیم.
+                </h3>
+                <div id="swiper" class="w-full max-w-7xl h-20 absolute bottom-0 left-1/2 -translate-x-1/2 select-none overflow-hidden">
         
-            <ul class="flex gap-10 items-center ">
-                <li class="h-16">
-                    <img src="/assets/company-1-BIEAab1f.webp" alt="" class="h-full brightness-0 invert" >
-                </li>
-                 <li class="h-16">
-                    <img src="data:image/webp;base64,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" alt="" class="h-full brightness-0 invert" >
-                </li>
-                 <li class="h-16">
-                    <img src="/assets/company-3-DAbcLyTD.webp" alt="" class="h-full brightness-0 invert" >
-                </li>
-                 <li class="h-16">
-                    <img src="/assets/company-4-BUX1mwNf.webp" alt="" class="h-full brightness-0 invert" >
-                </li>
-                 <li class="h-16">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABGCAMAAAB8DG+AAAAAJ1BMVEUclNIclNIclNIclNIclNIclNIclNIclNIclNIclNIclNIclNIclNLkoQfAAAAADXRSTlMAEy1DUGmGmbDK2+z+4jfkzgAABE5JREFUeNrd1+ty4joQBOCeHs1F0rz/8x4bTLhsspvYIaTO11Mg/WsMhWX8Rf0Y7NM+S5WXabvgfyo/adTVyD2wT/Z/yJ6LPurG6Eu+OB3PJmfEz7J/8Mg+lvSeF27NdsA+Y/5dvWfM8cVZgmeh3qPgR5lfNELuo+ZuDxohu2AfqRvzzvgVdxLx8DNrKgtSt1C0+Z+s6Q5NsZfwSim4ovAPgh9XD/qmPjD6Ptgr+40Mt41n/8MYI30n7Cc3uSV/wCtw1oORizFrLnNvZHjs49hL69Hsi8O/wEfYjSK8C874SASvwbzXe7h5RN5k3Zmqtt2wn9dnzVm7gwNao94SLKjabEtb10q8jsWttY+SLS5ciZdiPd3EIR7pdhOl2pnHwt3aQfqc038jfo1R75vnI/vhwVE+5mL0Oxnhm4jIAwl8E+pNSBH8LlEfGhlHPL9gzTH3G/gupAjPsOAbwa8gdj1km1mMvmWMObqb7oXvwVKwnuG7+hkAaapNG7HQdot4rXbqZ36OuynJZn6NG/E6Xg2Legocl0WsLHzTlGwW4RdmunjNYUHmwEYen0KEqm2ZJcSLaAVWTvDx77nuzbHH4X6GFatBxpz9ZPQMN48cs5bMOUbPfQLHmOJE0wUQ6AlxT0jBS6jiRMaoBiCuz/Bx4ovIMfc/u+OQbDhhZQiArM3skZf0Ohs9v57EETKIlSw5IykUvNhjQRpuaIa7xw13M19EfH38YEHBwv3haDjHt+nYT0W6AJA03FLiV2gGJoCIaPiNmkAD6EVXLIgjWsO3IlZpaF2wDDh0z0e8sBS8y7FPmghzAilANUQFviocF37tJ7gh3bDPrJXIzPMmG74q8p2lmHxLP3hVdXIkFrbj8knmdRnXRg1X2g27UQlQIOoOwVex+zs12BVXPiQSR82qji9rg1hoBOC8qUq8iRTkIA7q3Yl30bCxwD1NhgDoFaDyesVs4IIOeJXhqNnx6PHryo57CpkEQAGbO1YSKchrIQJQExzW48N+H1HFm6ZmWKkDnL3hTA1PpFs/kfc6wRogb+umWMj5FQ8/C8E3EkvipDEU4CjDQjxphqswGZd9K4cCaLbV0UwsmmORjmNIXFlNYiXeFYB2E6xsMFQUgDYIkNUblADMI6X5dlUtBMgKbIUtTQ41I5WgCUDB9gKCWhW4EPUAQqIENoUKejRIdcis0u2W586e8valZger8tBRBpYUQh1kk2ZYMR1mQWfDSjwzAThYgiQakLXdxXoQCzcAXlMBFawYQZkuOFiQ3imNaaRYzd5H1ZAwmSk87WcNYiECdUkFFdBOgAF3nLjCPFwBRGVmnxVAGo6gU4mmVKMCTSSramaDdcGYwGW/YUgEcKrRAHHVxJnAqoiVzlp0BdxxTOsuADz58G8geJes02izWXcLgabggtelCFYWOEoub583ylBVFpVoIfiQmOMFJIaApqAAxIPueCPES2jiYzvOfv8B+oB2LO3IAkoAAAAASUVORK5CYII=" alt="" class="h-full brightness-0 invert" >
-                </li>
-                 <li class="h-16">
-                    <img src="/assets/company-6-C8bR3TPf.png" alt="" class="h-full brightness-0 invert" >
-                </li>
-                <li class="h-16">
-                    <img src="/assets/company-7-D57o5WBv.png" alt="" class="h-full brightness-0 invert" >
-                </li>
-                <li class="h-16">
-                    <img src="data:image/png;base64,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" alt="" class="h-full brightness-0 invert" >
-                </li>
+                    <ul id="swiper-wrapper" class="absolute bottom-0 flex items-center will-change-transform">
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-1.webp" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-2.webp" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-3.webp" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-4.webp" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-5.png" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-6.png" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-7.png" alt="" class="h-full brightness-0 invert">
+                        </li>
+                        <li class="h-16 flex justify-center w-40 swiper-slide">
+                            <img src="images/logo/company-8.png" alt="" class="h-full brightness-0 invert">
+                        </li>
         
-            </ul>
-            
-          </div>
-        </div>
+                    </ul>
+        
+                </div>
+            </div>
         </section>
+        
+        
+        
       </div>
       <!-- partners section -->
       
@@ -285,36 +373,38 @@
             </div>
         
             <!-- capabilitiess -->
-            <div class="flex flex-col gap-6 mt-10 pb-20 max-w-5xl mx-auto relative z-10">
+            <div class="flex flex-col gap-6 sm:px-20 lg:px-0 mt-10 pb-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto relative z-10">
               <!-- Row 1 -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- capabilities Card -->
-                <div class="capabilities-card bg-gradient-to-t from-sky-50 to-sky-100 rounded-2xl p-6 gap-6 flex flex-col shadow-sm shadow-slate-300/60 relative overflow-hidden">
+                <div class="capabilities-card bg-gradient-to-t from-sky-50 to-sky-100 rounded-2xl p-6 gap-6 flex flex-col 
+                md:col-span-3 lg:col-span-1 shadow-sm shadow-slate-300/60 relative overflow-hidden" data-aos="flip-left" data-aos-duration="1000">
                   <div class="absolute -top-12 -left-12 size-36 bg-slate-400/5 rounded-full"></div>
                   <div class="absolute -bottom-28 right-8 size-36 bg-slate-400/5 rounded-full"></div>
                   <span class="text-teal-600/40 bg-primary p-3 bg-white size-16 block rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" fill="none"/><path fill="currentColor" d="M6.5 24c0-9.665 7.835-17.5 17.5-17.5S41.5 14.335 41.5 24S33.665 41.5 24 41.5S6.5 33.665 6.5 24M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20s20-8.954 20-20S35.046 4 24 4m5.142 8.365a1.26 1.26 0 0 0-1.774 0a1.24 1.24 0 0 0 0 1.76a13.887 13.887 0 0 1 0 19.747a1.24 1.24 0 0 0 0 1.761c.49.486 1.284.486 1.774 0a16.364 16.364 0 0 0 0-23.268m-7.765 2.99a1.344 1.344 0 0 1 1.82 0c5.068 4.774 5.068 12.515 0 17.29a1.343 1.343 0 0 1-1.82 0a1.163 1.163 0 0 1 0-1.715c4.063-3.827 4.063-10.033 0-13.86a1.163 1.163 0 0 1 0-1.715m-5.51 3.01a1.263 1.263 0 0 1 1.776 0a7.92 7.92 0 0 1 0 11.27a1.263 1.263 0 0 1-1.775 0a1.24 1.24 0 0 1 0-1.761a5.447 5.447 0 0 0 0-7.749a1.24 1.24 0 0 1 0-1.76"/></svg>
                   </span>
                   <div class="flex gap-6 flex-col">
-                    <h3 class="text-sm font-bold md:text-xl">درگاه پرداخت اینترنتی اختصاصی</h3>
+                    <h3 class="text-sm font-bold md:text-xl">پرداخت</h3>
         
                     <p>
-                       درگاه پرداخت اختصاصی – کسب‌وکار خود را با یک درگاه پرداخت اختصاصی متحول کنید! با امنیت بالا، شخصی‌سازی کامل و اتصال آسان، تجربه‌ای روان برای مشتریان خود فراهم کنید. پشتیبانی ۲۴ ساعته و کارمزد رقابتی، همراه رشد شما خواهد بود. 
+                       امکان پرداخت از طریق کلیه کارت‌های عضو شبکه شتاب و از روش های متنوع پرداخت اینترنتی, USSD, اپلیکیشن و ... برای شما و کاربران شما مهیا ساخته‌ایم.
                     </p>
                   </div>
                 </div>
         
-                 <div class="capabilities-card bg-gradient-to-t from-fuchsia-50 to-fuchsia-100 rounded-2xl p-6 gap-6 flex flex-col shadow-sm shadow-slate-300/60 col-span-2 relative overflow-hidden">
+                 <div class="capabilities-card bg-gradient-to-t from-fuchsia-50 to-fuchsia-100 rounded-2xl p-6 gap-6 flex flex-col 
+                 shadow-sm shadow-slate-300/60 md:col-span-3 lg:col-span-2 relative overflow-hidden" data-aos="flip-left"  data-aos-duration="1000">
                   <div class="absolute -top-12 -left-12 size-36 bg-slate-400/5 rounded-full"></div>
                   <div class="absolute -bottom-28 right-8 size-36 bg-slate-400/5 rounded-full"></div>
                   <span class="text-fuchsia-800/40 bg-primary p-3 bg-white size-16 block rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="m11.825 6.455l-.009-.006l-.793-.533a3 3 0 0 0-3.626.211L5.45 7.796a.75.75 0 0 1-.488.18H2.75a.75.75 0 0 0-.75.75v6.03c0 .414.336.75.75.75h2.088a.75.75 0 0 1 .563.254l2.339 2.66a2.25 2.25 0 0 0 2.968.365l.684-.473l.734.25a2.25 2.25 0 0 0 2.539-.803l.47-.642l.326.044a2.25 2.25 0 0 0 2.276-1.153l.049-.09h3.464a.75.75 0 0 0 .75-.75V8.727a.75.75 0 0 0-.75-.75h-2.211a.75.75 0 0 1-.49-.182L16.86 6.336a3.75 3.75 0 0 0-5.036.12m-1.64.705l.562.378l-1.96 1.971a2.25 2.25 0 0 0 .044 3.216l.068.064c.81.771 2.062.831 2.941.14l2.079-1.632l2.657 2.555a.75.75 0 0 1 .139.9l-.025.044l-.014.026l-.255.467a.75.75 0 0 1-.758.384l-.769-.103a.75.75 0 0 0-.705.3l-.734 1.002a.75.75 0 0 1-.846.268l-1.09-.37a.75.75 0 0 0-.668.093l-.994.687a.75.75 0 0 1-.99-.122l-2.339-2.66a2.25 2.25 0 0 0-1.69-.763H3.5v-4.53h1.461a2.25 2.25 0 0 0 1.464-.541l1.948-1.669a1.5 1.5 0 0 1 1.813-.106m8.12 7.259a2.25 2.25 0 0 0-.69-1.648l-2.521-2.424a.75.75 0 0 0-1.053-1.053l-.506.397l-.06.047l-2.562 2.013a.75.75 0 0 1-.981-.047l-.068-.065a.75.75 0 0 1-.015-1.072l2.965-2.98a2.25 2.25 0 0 1 3.066-.116l1.687 1.458a2.25 2.25 0 0 0 1.472.547h1.46v4.943z" stroke-width="0.1" stroke="currentColor"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-width="1.6" d="M7 11V6c0-3 2-5 5-5s5 2 5 5v5m-5 12a7 7 0 1 0 0-14a7 7 0 0 0 0 14Zm0-8v4m0-3a1 1 0 1 0 0-2a1 1 0 0 0 0 2Z"/></svg>
                   </span>
                   <div class="flex gap-6 flex-col">
-                    <h3 class="text-sm font-bold md:text-xl">درگاه پرداخت اینترنتی اشتراکی</h3>
+                    <h3 class="text-sm font-bold md:text-xl">امنیت</h3>
         
                     <p>
-                        درگاه پرداخت اشتراکی راهکاری هوشمند برای کسب‌وکارهای مشارکتی است که امکان استفاده از یک درگاه مشترک و تقسیم خودکار درآمد بین چند ذی‌نفع را فراهم می‌کند. این سیستم بدون نیاز به عملیات دستی، تسهیم وجه را انجام داده و فرایند تسویه‌حساب را ساده و شفاف می‌سازد. 
+                        در تجارت الکترونیک استقرار امنیت حکم ستون نگه‌دارنده‌ای را دارد که اگر نباشد همه چیز فرو خواهد ریخت. پاناپال تکیه‌گاه محکمی است.
                     </p>
                   </div>
                 </div>
@@ -323,47 +413,50 @@
               <!-- Row 2 -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- capabilities Card -->
-                <div class="capabilities-card bg-gradient-to-t from-pink-50 to-pink-100 rounded-2xl p-6 gap-6 flex flex-col shadow-sm shadow-slate-300/60 overflow-hidden relative">
+                <div class="capabilities-card bg-gradient-to-t from-pink-50 to-pink-100 rounded-2xl p-6 gap-6 flex flex-col md:col-span-3 
+                lg:col-span-1 shadow-sm shadow-slate-300/60 overflow-hidden relative" data-aos="fade-left" data-aos-duration="1500">
                   <div class="absolute -top-12 -left-12 size-36 bg-slate-400/5 rounded-full"></div>
                   <div class="absolute -bottom-28 right-8 size-36 bg-slate-400/5 rounded-full"></div>
                   <span class="text-pink-600/40 bg-primary p-3 bg-white size-16 block rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path fill="currentColor" d="M28 128a8 8 0 0 1 0-16h28a8 8 0 0 0 0-16H40a24 24 0 0 1 0-48a8 8 0 0 1 16 0h8a8 8 0 0 1 0 16H40a8 8 0 0 0 0 16h16a24 24 0 0 1 0 48a8 8 0 0 1-16 0Zm204-72v136a16 16 0 0 1-16 16H40a16 16 0 0 1-16-16v-40a8 8 0 0 1 16 0v40h120v-32H80a8 8 0 0 1 0-16h80v-32h-56a8 8 0 0 1 0-16h112V64H96a8 8 0 0 1 0-16h128a8 8 0 0 1 8 8m-56 88h40v-32h-40Zm40 48v-32h-40v32Z" stroke-width="0.5" stroke="currentColor"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="none"/><path fill="currentColor" d="m21 7l-5-5l-5 5l1.409 1.419L15 5.847V13h2V5.794l2.591 2.625zm0 18l-5 5l-5-5l1.409-1.419L15 26.153V19h2v7.206l2.591-2.625zm3-14l-5 5l5 5l1.419-1.409L22.847 17H30v-2h-7.206l2.625-2.591zM8 11l5 5l-5 5l-1.419-1.409L9.153 17H2v-2h7.206l-2.625-2.591z"/></svg>
                   </span>
                   <div class="flex gap-6 flex-col">
-                    <h3 class="text-sm font-bold md:text-xl">فاکتور آنلاین</h3>
+                    <h3 class="text-sm font-bold md:text-xl">مسیردهی هوشمند</h3>
         
                     <p>
-                       فاکتور آنلاین درگاه پرداخت روشی سریع و مطمئن برای صدور و دریافت پرداخت‌ها است. با استفاده از این سرویس، می‌توانید به‌سادگی فاکتورهای دیجیتال ایجاد کرده و لینک پرداخت مستقیم برای مشتریان ارسال کنید. این سیستم فرایند پرداخت را تسهیل کرده، امنیت تراکنش‌ها را افزایش می‌دهد و نیازی به روش‌های سنتی دریافت وجه ندارد.
+                       متریک‌های متفاوت در بازه‌های زمانی مختلف باعث می‌شود کاربران به بهترین درگاه پرداخت با بالاترین میزان موفق بودن تراکنش هدایت می‌شوند.
                     </p>
                   </div>
                 </div>
         
-                <div class="capabilities-card bg-gradient-to-t from-emerald-50 to-emerald-100/50 rounded-2xl p-6 gap-6 flex flex-col shadow-sm shadow-slate-300/60 relative overflow-hidden">
+                <div class="capabilities-card bg-gradient-to-t from-emerald-50 to-emerald-100/50 rounded-2xl p-6 gap-6 flex flex-col 
+                md:col-span-3 lg:col-span-1 shadow-sm shadow-slate-300/60 relative overflow-hidden" data-aos="fade-up" data-aos-duration="1500">
                   <div class="absolute -top-12 -left-12 size-36 bg-slate-400/5 rounded-full"></div>
                   <div class="absolute -bottom-28 right-8 size-36 bg-slate-400/5 rounded-full"></div>
                   <span class="text-green-600/40 bg-primary p-3 bg-white size-16 block rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="M16.821 5H7.18c-.542 0-.98 0-1.333.029c-.365.03-.685.093-.981.243a2.5 2.5 0 0 0-1.093 1.093c-.069.136-.1.316-.12.45c-.024.158-.043.35-.059.561c-.031.424-.052.953-.066 1.498c-.027 1.09-.027 2.265-.027 2.825v.001a.5.5 0 0 0 1 0c0-.37 0-1.003.008-1.7H19.5v5.3c0 .568 0 .965-.026 1.273c-.024.302-.07.476-.137.608a1.5 1.5 0 0 1-.656.656c-.132.067-.306.113-.608.137c-.308.026-.705.026-1.273.026H12a.5.5 0 0 0 0 1h4.821c.542 0 .98 0 1.333-.029c.365-.03.685-.093.981-.244a2.5 2.5 0 0 0 1.092-1.092c.151-.296.214-.616.244-.98c.029-.355.029-.792.029-1.334V8.68c0-.542 0-.98-.029-1.333c-.03-.365-.093-.685-.244-.981a2.5 2.5 0 0 0-1.092-1.093c-.296-.15-.616-.213-.98-.243C17.8 5 17.362 5 16.82 5m2.676 3H4.558q.014-.3.033-.55q.021-.302.05-.488c.012-.081.022-.125.026-.143l.002-.01a1.5 1.5 0 0 1 .65-.646c.132-.067.306-.113.608-.137C6.236 6 6.632 6 7.2 6h9.6c.568 0 .965 0 1.273.026c.302.024.476.07.608.137a1.5 1.5 0 0 1 .656.656c.067.132.113.306.137.608c.014.163.02.35.023.573" stroke-width="0.4" stroke="currentColor"/><path fill="currentColor" d="m9.314 15.877l-.72.7c.452.853.31 1.925-.429 2.641l-1.148 1.114a2.41 2.41 0 0 1-3.33 0a2.22 2.22 0 0 1 0-3.21l.72-.698a2.22 2.22 0 0 1 .428-2.642l1.148-1.114a2.41 2.41 0 0 1 3.33 0a2.22 2.22 0 0 1 0 3.21m-.651-.61a1.377 1.377 0 0 0 0-1.988a1.465 1.465 0 0 0-2.029 0l-1.149 1.114a1.38 1.38 0 0 0-.368 1.382a2.42 2.42 0 0 1 2.909.11zM7.374 16.5a1.47 1.47 0 0 0-1.748 0a1.47 1.47 0 0 0 1.748 0m-3.037 1.233a1.377 1.377 0 0 0 0 1.988a1.465 1.465 0 0 0 2.029 0l1.149-1.114c.385-.373.508-.906.368-1.382a2.42 2.42 0 0 1-2.909-.11zM14 14a1 1 0 1 0 0 2h3a1 1 0 1 0 0-2z" stroke-width="0.2" stroke="currentColor"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="none"/><path fill="currentColor" d="M9 11a7 7 0 1 1 14 0a1 1 0 1 0 2 0a9 9 0 1 0-14.385 7.212a9 9 0 0 0 3.558 1.602a2 2 0 1 0 .216-2A7 7 0 0 1 9 11m1 0a6 6 0 1 1 7.913 5.689A3 3 0 0 0 16 16c-.727 0-1.393.259-1.913.689A6 6 0 0 1 10 11m6-4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M7.5 18h1.359a10 10 0 0 0 2.777 2H7.5A1.5 1.5 0 0 0 6 21.5v.5c0 1.473.94 2.949 2.759 4.106c1.807 1.15 4.364 1.894 7.24 1.894c2.878 0 5.435-.744 7.242-1.894C25.061 24.95 26 23.472 26 22v-.5a1.5 1.5 0 0 0-1.5-1.5h-5.67a3 3 0 0 0 0-2h5.67a3.5 3.5 0 0 1 3.5 3.5v.5c0 2.393-1.523 4.417-3.685 5.793C22.141 29.177 19.198 30 16 30s-6.14-.823-8.315-2.207C5.523 26.417 4 24.393 4 22v-.5A3.5 3.5 0 0 1 7.5 18"/></svg>
                   </span>
                   <div class="flex gap-6 flex-col">
-                    <h3 class="text-sm font-bold md:text-xl">لینک پرداخت اختصاصی</h3>
+                    <h3 class="text-sm font-bold md:text-xl">پشتیبانی</h3>
         
                     <p>
-                                            لینک پرداخت اختصاصی در درگاه پرداخت، روشی ساده و حرفه‌ای برای دریافت وجه بدون نیاز به وب‌سایت است. با ایجاد یک لینک پرداخت، می‌توانید آن را برای مشتریان خود ارسال کنید تا پرداخت را سریع و امن انجام دهند. این سرویس ایده‌آل برای فریلنسرها، فروش‌های اینترنتی و کسب‌وکارهایی است که به درگاه پرداخت مستقیم نیاز دارند.
+                    به واسطه‌ی پشتیبانی ۲۴ ساعته, وجود متنوع‌ترین پلاگین‌های پرداخت و وجود وب سرویس آزمایشی می‌توانند معرف خوبی از عبارت پاناپال باشند.
                     </p>
                   </div>
                 </div>
         
-                <div class="capabilities-card bg-gradient-to-t from-violet-50 to-violet-100 rounded-2xl p-6 gap-6 flex flex-col shadow-sm shadow-slate-300/60 relative overflow-hidden">
+                <div class="capabilities-card bg-gradient-to-t from-violet-50 to-violet-100 rounded-2xl p-6 gap-6 flex flex-col 
+                md:col-span-3 lg:col-span-1 shadow-sm shadow-slate-300/60 relative overflow-hidden"  data-aos="fade-right" data-aos-duration="1500">
                   <div class="absolute -top-12 -left-12 size-36 bg-slate-400/5 rounded-full"></div>
                   <div class="absolute -bottom-28 right-8 size-36 bg-slate-400/5 rounded-full"></div>
                   <span class="text-violet-600/40 bg-primary p-3 bg-white size-16 block rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10.5V15c0 2.828 0 4.243.879 5.121C4.757 21 6.172 21 9 21h3.5M21 10.5v2M7 17h4m4 1.5h7M18.5 22v-7m-.705-12.997L6.149 2.03c-1.738-.085-2.184 1.182-2.184 1.8c0 .554-.075 1.361-1.14 2.878c-1.066 1.517-.986 1.967-.385 3.017c.498.872 1.766 1.212 2.428 1.27A2.976 2.976 0 0 0 7.99 8.118c1.042 3.03 4.005 3.03 5.325 2.684c1.323-.348 2.456-1.59 2.723-2.684c.156 1.36.63 2.153 2.027 2.698c1.448.564 2.694-.299 3.319-.852s1.026-1.781-.088-3.131c-.768-.931-1.089-1.808-1.194-2.717c-.06-.527-.114-1.093-.506-1.453c-.572-.526-1.393-.686-1.801-.66" color="currentColor"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><rect width="36" height="36" fill="none"/><path fill="currentColor" d="m25.18 12.32l-5.91 5.81a3 3 0 1 0 1.41 1.42l5.92-5.81Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M18 4.25A16.49 16.49 0 0 0 5.4 31.4l.3.35h24.6l.3-.35A16.49 16.49 0 0 0 18 4.25m11.34 25.5H6.66a14.43 14.43 0 0 1-3.11-7.84H7v-2H3.55A14.4 14.4 0 0 1 7 11.29l2.45 2.45l1.41-1.41l-2.43-2.46A14.4 14.4 0 0 1 17 6.29v3.5h2V6.3a14.47 14.47 0 0 1 13.4 13.61h-3.48v2h3.53a14.43 14.43 0 0 1-3.11 7.84" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>
                   </span>
                   <div class="flex gap-6 flex-col">
-                    <h3 class="text-sm font-bold md:text-xl">فروشگاه ساز</h3>
+                    <h3 class="text-sm font-bold md:text-xl">داشبورد حرفه ای</h3>
         
                     <p>
-                        درگاه پرداخت اشتراکی راهکاری هوشمند برای کسب‌وکارهای مشارکتی است که امکان استفاده از یک درگاه مشترک و تقسیم خودکار درآمد بین چند ذی‌نفع را فراهم می‌کند. این سیستم بدون نیاز به عملیات دستی، تسهیم وجه را انجام داده و فرایند تسویه‌حساب را ساده و شفاف می‌سازد. 
+                      مدیریت لینک پرداخت، تسویه‌ها، گزارش تراکنش‌ها و ابزارهای مالی تنها در یک پنل ساده و یکپارچه.
                     </p>
                   </div>
                 </div>
@@ -385,184 +478,208 @@
           </div>
         
           <!-- features -->
-          <div
-            class="grid grid-cols-3 grid-rows-2 gap-16 mt-10 py-20 max-w-5xl mx-auto leading-[30px] relative">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-8 sm:px-20 md:px-0 md:gap-12 lg:gap-16 py-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto relative">
         
-            <div
-              class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-0 [&>div]:top-0 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-1/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-blue-600 [&>div]:opacity-15 [&>div]:blur-[40px]">
-              <div class="!z-10">
         
-              </div>
-            </div>
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-green-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-green-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]" data-aos="zoom-out" data-aos-duration="1000">
+              <div class="feature-shadow green-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon green-shadow">
+                  <span class="block size-full bg-green-100 text-green-500  rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24">
+                      <rect width="24" height="24" fill="none" />
+                      <path fill="currentColor"
+                        d="M10.758 15.192q.465.466 1.194.424q.729-.041 1.064-.524l5.253-7.323l-7.361 5.216q-.502.334-.559 1.038t.409 1.17M12 5q1.379 0 2.51.336q1.132.335 2.256 1.025l-.92.623q-.883-.482-1.828-.733T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.9-.232-1.894t-.734-1.852l.624-.92q.73 1.252 1.033 2.356T21 13.888q.006 1.29-.287 2.408q-.292 1.118-.91 2.254q-.12.2-.365.325T18.9 19H5.1q-.275 0-.51-.134q-.234-.135-.394-.393q-.496-.875-.846-1.974T3 14q0-1.844.7-3.481q.699-1.637 1.909-2.867T8.471 5.71T12 5m.04 6.96"
+                        stroke-width="0.4" stroke="currentColor" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
+                  <span class="text-lg block text-center font-bold mt-4">
+                    سریع و رایگان
+                  </span>
         
-            <div
-              class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:-left-10 [&>div]:top-1/2 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-1/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-green-600 [&>div]:opacity-15 [&>div]:blur-[40px]">
-              <div class="!z-10">
-        
-              </div>
-            </div>
-        
-            <div
-              class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-60 [&>div]:top-0 [&>div]:-z-10 [&>div]:m-auto [&>div]:h-2/3 [&>div]:w-2/4 [&>div]:rounded-full [&>div]:bg-rose-600 [&>div]:opacity-10 [&>div]:blur-[40px]">
-              <div class="!z-10">
-        
-              </div>
-            </div>
-        
-            <!-- Row 1 -->
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-green-100 text-green-500  rounded-full p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 24 24"><rect width="24" height="24" fill="none" /><path
-                      fill="currentColor"
-                      d="M10.758 15.192q.465.466 1.194.424q.729-.041 1.064-.524l5.253-7.323l-7.361 5.216q-.502.334-.559 1.038t.409 1.17M12 5q1.379 0 2.51.336q1.132.335 2.256 1.025l-.92.623q-.883-.482-1.828-.733T12 6Q8.675 6 6.337 8.338T4 14q0 1.05.288 2.075T5.1 18h13.8q.575-.95.838-1.975T20 13.9q0-.9-.232-1.894t-.734-1.852l.624-.92q.73 1.252 1.033 2.356T21 13.888q.006 1.29-.287 2.408q-.292 1.118-.91 2.254q-.12.2-.365.325T18.9 19H5.1q-.275 0-.51-.134q-.234-.135-.394-.393q-.496-.875-.846-1.974T3 14q0-1.844.7-3.481q.699-1.637 1.909-2.867T8.471 5.71T12 5m.04 6.96"
-                      stroke-width="0.4" stroke="currentColor" /></svg>
-                </span>
-              </div>
-              <span class="text-lg block text-center font-bold mt-4">
-                سریع و رایگان
-              </span>
-        
-              <p class="text-slate-900">
-                بدون نیاز به پرداخت هیچ هزینه اضافی در سریع ترین زمان ممکن تجارت خود را
-                آغاز کنید
-              </p>
-            </div>
-        
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-cyan-100/75 text-cyan-500 rounded-full p-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 24 24"><rect width="24" height="24" fill="none" /><path
-                      fill="currentColor"
-                      d="M14.49 6.83a.49.49 0 0 1 .68 0L18.09 10a.25.25 0 0 1 0 .35L16.47 12a.75.75 0 0 0 .53 1.25h5.5a.76.76 0 0 0 .75-.75V7A.75.75 0 0 0 22 6.47l-1.44 1.41a.21.21 0 0 1-.18.07a.25.25 0 0 1-.18-.08l-3.48-3.73a2.52 2.52 0 0 0-3.38-.24l-2.88 2.31a.51.51 0 0 1-.67 0L4.06.44a1.5 1.5 0 0 0-2.12 2.12l6.37 6.37a2.5 2.5 0 0 0 3.33.18ZM11.5 22.5A1.5 1.5 0 0 0 10 21H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m11 0A1.5 1.5 0 0 0 21 21h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m1-4.5a1.5 1.5 0 0 0-1.5-1.5h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5M9 19.5a1.5 1.5 0 0 0 0-3H2a1.5 1.5 0 0 0 0 3Zm1-7.5H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 0-3"
-                      stroke-width="0.4" stroke="currentColor" /></svg>
-                </span>
-              </div>
-              <span class="text-lg block text-center font-bold mt-4">
-                پایین ترین تعرفه
-              </span>
-        
-              <p class="text-slate-900">
-                همواره از ابتدا تاکنون پایین ترین نرخ کارمزد را برای تمامی خدمات ارائه
-                نموده ایم
-              </p>
-            </div>
-        
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-indigo-200/75 text-indigo-500 rounded-full p-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 16 16"><rect width="16" height="16" fill="none" /><path
-                      fill="currentColor" fill-rule="evenodd"
-                      d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707l1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562l-1.414-1.414l1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56l-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
-                      stroke-width="0.4" stroke="currentColor" /></svg>
-                </span>
+                  <p class="text-slate-800 text-justify">
+                    بدون نیاز به پرداخت هیچ هزینه اضافی در سریع ترین زمان ممکن تجارت خود را
+                    آغاز کنید
+                  </p>
+                </div>
               </div>
         
-              <span class="text-lg block text-center font-bold mt-4">
-                پلاگین‌های متنوع
-              </span>
-        
-              <p class="text-slate-900">
-                پلاگین های موجود ، مطابق با نیاز کاربران به پاناپال اضافه گردیده و این
-                روند ادامه خواهد داشت
-              </p>
             </div>
         
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-fuchsia-200/60 text-fuchsia-500  rounded-full p-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 32 32"><rect width="32" height="32" fill="none" /><path
-                      fill="currentColor"
-                      d="M28 16v6H4V6h7V4H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8v4H8v2h16v-2h-4v-4h8a2 2 0 0 0 2-2v-6ZM18 28h-4v-4h4Z" /><path
-                      fill="currentColor"
-                      d="M18 18h-.01a1 1 0 0 1-.951-.725L15.246 11H11V9h5a1 1 0 0 1 .962.725l1.074 3.76l3.009-9.78A1.01 1.01 0 0 1 22 3a.98.98 0 0 1 .949.684L24.72 9H30v2h-6a1 1 0 0 1-.949-.684l-1.013-3.04l-3.082 10.018A1 1 0 0 1 18 18" /></svg>
-                </span>
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-cyan-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-cyan-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]"  data-aos="zoom-in" data-aos-duration="1000">
+              <div class="feature-shadow cyan-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon cyan-shadow">
+                  <span class="block size-full bg-cyan-100/75 text-cyan-500 rounded-full p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24">
+                      <rect width="24" height="24" fill="none" />
+                      <path fill="currentColor"
+                        d="M14.49 6.83a.49.49 0 0 1 .68 0L18.09 10a.25.25 0 0 1 0 .35L16.47 12a.75.75 0 0 0 .53 1.25h5.5a.76.76 0 0 0 .75-.75V7A.75.75 0 0 0 22 6.47l-1.44 1.41a.21.21 0 0 1-.18.07a.25.25 0 0 1-.18-.08l-3.48-3.73a2.52 2.52 0 0 0-3.38-.24l-2.88 2.31a.51.51 0 0 1-.67 0L4.06.44a1.5 1.5 0 0 0-2.12 2.12l6.37 6.37a2.5 2.5 0 0 0 3.33.18ZM11.5 22.5A1.5 1.5 0 0 0 10 21H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m11 0A1.5 1.5 0 0 0 21 21h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5m1-4.5a1.5 1.5 0 0 0-1.5-1.5h-7a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 1.5-1.5M9 19.5a1.5 1.5 0 0 0 0-3H2a1.5 1.5 0 0 0 0 3Zm1-7.5H3a1.5 1.5 0 0 0 0 3h7a1.5 1.5 0 0 0 0-3"
+                        stroke-width="0.4" stroke="currentColor" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
+                  <span class="text-lg block text-center font-bold mt-4">
+                    پایین ترین تعرفه
+                  </span>
+        
+                  <p class="text-slate-800 text-justify">
+                    همواره از ابتدا تاکنون پایین ترین نرخ کارمزد را برای تمامی خدمات ارائه
+                    نموده ایم
+                  </p>
+                </div>
               </div>
         
-              <span class="text-lg block text-center font-bold mt-4">
-                مانیتورینگ
-              </span>
-        
-              <p class="text-slate-900">
-                بررسی وضعیت شبکه به صورت سیستمی ( خودکار ) و نیروی انسانی و با سرورهای
-                داخلی و خارجی انجام می گیرد که نتیجه آن به حداقل رسیدن اختلالات می باشد
-              </p>
             </div>
         
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-pink-200 text-pink-500 rounded-full p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 1024 1024"><rect width="1024" height="1024"
-                      fill="none" /><path fill="currentColor"
-                      d="M512 64L128 192v384c0 212.1 171.9 384 384 384s384-171.9 384-384V192zm312 512c0 172.3-139.7 312-312 312S200 748.3 200 576V246l312-110l312 110z"
-                      stroke-width="0.2" stroke="currentColor" /><path
-                      fill="currentColor"
-                      d="M378.4 475.1a35.91 35.91 0 0 0-50.9 0a35.91 35.91 0 0 0 0 50.9l129.4 129.4l2.1 2.1a33.98 33.98 0 0 0 48.1 0L730.6 434a33.98 33.98 0 0 0 0-48.1l-2.8-2.8a33.98 33.98 0 0 0-48.1 0L483 579.7z"
-                      stroke-width="0.2" stroke="currentColor" /></svg>
-                </span>
-              </div>
-              <span class="text-lg block text-center font-bold mt-4">
-                ایمن و مطمئن
-              </span>
         
-              <p class="text-slate-900">
-                راستی آزمایی اطلاعات در حین استفاده از پاناپال نکته کلیدی محسوب می شود
-                که حاصل رعایت متدهای امنیتی مطابق با استاندارهای روز دنیا می باشد.
-              </p>
-            </div>
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-indigo-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-indigo-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]"  data-aos="zoom-out" data-aos-duration="1000">
+              <div class="feature-shadow indigo-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon indigo-shadow">
+                  <span class="block size-full bg-indigo-200/75 text-indigo-500 rounded-full p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 16 16">
+                      <rect width="16" height="16" fill="none" />
+                      <path fill="currentColor" fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 1 2.898 5.673c-.167-.121-.216-.406-.002-.62l1.8-1.8a3.5 3.5 0 0 0 4.572-.328l1.414-1.415a.5.5 0 0 0 0-.707l-.707-.707l1.559-1.563a.5.5 0 1 0-.708-.706l-1.559 1.562l-1.414-1.414l1.56-1.562a.5.5 0 1 0-.707-.706l-1.56 1.56l-.707-.706a.5.5 0 0 0-.707 0L5.318 5.975a3.5 3.5 0 0 0-.328 4.571l-1.8 1.8c-.58.58-.62 1.6.121 2.137A8 8 0 1 0 0 8a.5.5 0 0 0 1 0"
+                        stroke-width="0.4" stroke="currentColor" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
         
-            <div
-              class="group/feature-item gradient-border-mask-feature flex gap-4 flex-col px-6 py-12 relative backdrop-blur-md z-20 hover:scale-110 transition-all duration-300">
-              <div
-                class="bg-transparent backdrop-blur-2xl gradient-border-mask-feature p-2 size-20 absolute left-1/2 -translate-x-1/2 -top-10 z-20 rounded-full">
-                <span
-                  class="block size-full bg-amber-100 text-amber-500 rounded-full p-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-full"
-                    viewBox="0 0 48 48"><rect width="48" height="48" fill="none" /><g
-                      fill="none" stroke="currentColor" stroke-linecap="round"
-                      stroke-linejoin="round" stroke-width="2.5"><path
-                        d="M24 45c14.5 0 20-3 20-14M6.803 35.783C5.119 35.362 4 33.825 4 32.09v-6.178c0-1.736 1.119-3.274 2.803-3.695c1.626-.407 3.762-.864 5.862-1.084c1.438-.151 2.704.692 2.943 2.117c.21 1.244.392 3.091.392 5.75c0 2.66-.183 4.507-.392 5.75c-.24 1.425-1.505 2.268-2.943 2.118c-2.1-.22-4.236-.678-5.862-1.085" /><path
-                        d="M41.197 35.783C42.881 35.362 44 33.825 44 32.09v-6.178c0-1.736-1.119-3.274-2.803-3.695c-1.626-.407-3.762-.864-5.862-1.084c-1.438-.151-2.704.692-2.943 2.117C32.182 24.494 32 26.341 32 29c0 2.66.183 4.507.392 5.75c.24 1.425 1.505 2.268 2.943 2.118c2.1-.22 4.236-.678 5.862-1.085" /><path
-                        d="M44 25.911V23c0-11.046-8.954-20-20-20S4 11.954 4 23v2.911m33.956-4.398C37.386 14.51 31.356 9 24 9s-13.386 5.51-13.956 12.513" /></g></svg>
-                </span>
+                  <span class="text-lg block text-center font-bold mt-4">
+                    پلاگین‌های متنوع
+                  </span>
+        
+                  <p class="text-slate-800 text-justify">
+                    پلاگین های موجود ، مطابق با نیاز کاربران به پاناپال اضافه گردیده و این
+                    روند ادامه خواهد داشت
+                  </p>
+                </div>
               </div>
         
-              <span class="text-lg block text-center font-bold mt-4">
-                پشتیبانی
-              </span>
-        
-              <p class="text-slate-900">
-                از ابتدا تا انتها همواره در کنار شما خواهیم بود و کلیه سوالات شما را
-                پاسخ و کلیه مشکلات شما را رفع خواهیم نمود
-              </p>
             </div>
+        
+        
+        
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-fuchsia-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-fuchsia-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]"  data-aos="zoom-in" data-aos-duration="1000">
+              <div class="feature-shadow fuchsia-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon fuchsia-shadow">
+                  <span class="block size-full bg-fuchsia-200/60 text-fuchsia-500  rounded-full p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 32 32">
+                      <rect width="32" height="32" fill="none" />
+                      <path fill="currentColor"
+                        d="M28 16v6H4V6h7V4H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8v4H8v2h16v-2h-4v-4h8a2 2 0 0 0 2-2v-6ZM18 28h-4v-4h4Z" />
+                      <path fill="currentColor"
+                        d="M18 18h-.01a1 1 0 0 1-.951-.725L15.246 11H11V9h5a1 1 0 0 1 .962.725l1.074 3.76l3.009-9.78A1.01 1.01 0 0 1 22 3a.98.98 0 0 1 .949.684L24.72 9H30v2h-6a1 1 0 0 1-.949-.684l-1.013-3.04l-3.082 10.018A1 1 0 0 1 18 18" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
+        
+                  <span class="text-lg block text-center font-bold mt-4">
+                    مانیتورینگ
+                  </span>
+        
+                  <p class="text-slate-800 text-justify">
+                    بررسی وضعیت شبکه به صورت سیستمی ( خودکار ) و نیروی انسانی و با سرورهای
+                    داخلی و خارجی انجام می گیرد که نتیجه آن به حداقل رسیدن اختلالات می باشد
+                  </p>
+                </div>
+              </div>
+        
+            </div>
+        
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-pink-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-pink-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]"  data-aos="zoom-out" data-aos-duration="1000">
+              <div class="feature-shadow pink-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon pink-shadow">
+                  <span class="block size-full bg-pink-200 text-pink-500 rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 1024 1024">
+                      <rect width="1024" height="1024" fill="none" />
+                      <path fill="currentColor"
+                        d="M512 64L128 192v384c0 212.1 171.9 384 384 384s384-171.9 384-384V192zm312 512c0 172.3-139.7 312-312 312S200 748.3 200 576V246l312-110l312 110z"
+                        stroke-width="0.2" stroke="currentColor" />
+                      <path fill="currentColor"
+                        d="M378.4 475.1a35.91 35.91 0 0 0-50.9 0a35.91 35.91 0 0 0 0 50.9l129.4 129.4l2.1 2.1a33.98 33.98 0 0 0 48.1 0L730.6 434a33.98 33.98 0 0 0 0-48.1l-2.8-2.8a33.98 33.98 0 0 0-48.1 0L483 579.7z"
+                        stroke-width="0.2" stroke="currentColor" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
+        
+                  <span class="text-lg block text-center font-bold mt-4">
+                    ایمن و مطمئن
+                  </span>
+        
+                  <p class="text-slate-800 text-justify">
+                    راستی آزمایی اطلاعات در حین استفاده از پاناپال نکته کلیدی محسوب می شود
+                    که حاصل رعایت متدهای امنیتی مطابق با استاندارهای روز دنیا می باشد.
+                  </p>
+                </div>
+              </div>
+        
+            </div>
+        
+        
+            <div class="group/feature-item p-6 flex relative rounded-3xl bg-transparent
+            before:content[''] before:absolute before:size-full before:border-2 before:border-amber-500 before:rounded-3xl before:top-0 before:left-1/2 before:-translate-x-1/2
+            after:content[''] after:absolute after:size-24  after:border-[6px] after:border-amber-500 after:border-t-transparent after:border-l-transparent after:rounded-3xl after:rounded-t-none after:rounded-l-none
+            after:-bottom-[2px] after:-right-[2px]"  data-aos="zoom-in" data-aos-duration="1000">
+              <div class="feature-shadow amber-shadow flex bg-white rounded-3xl gap-4 flex-col items-center p-6">
+                <div class="p-1.5 size-20 rounded-full z-20 feature-icon amber-shadow">
+                  <span class="block size-full bg-amber-100 text-amber-500 rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 48 48">
+                      <rect width="48" height="48" fill="none" />
+                      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                        <path
+                          d="M24 45c14.5 0 20-3 20-14M6.803 35.783C5.119 35.362 4 33.825 4 32.09v-6.178c0-1.736 1.119-3.274 2.803-3.695c1.626-.407 3.762-.864 5.862-1.084c1.438-.151 2.704.692 2.943 2.117c.21 1.244.392 3.091.392 5.75c0 2.66-.183 4.507-.392 5.75c-.24 1.425-1.505 2.268-2.943 2.118c-2.1-.22-4.236-.678-5.862-1.085" />
+                        <path
+                          d="M41.197 35.783C42.881 35.362 44 33.825 44 32.09v-6.178c0-1.736-1.119-3.274-2.803-3.695c-1.626-.407-3.762-.864-5.862-1.084c-1.438-.151-2.704.692-2.943 2.117C32.182 24.494 32 26.341 32 29c0 2.66.183 4.507.392 5.75c.24 1.425 1.505 2.268 2.943 2.118c2.1-.22 4.236-.678 5.862-1.085" />
+                        <path
+                          d="M44 25.911V23c0-11.046-8.954-20-20-20S4 11.954 4 23v2.911m33.956-4.398C37.386 14.51 31.356 9 24 9s-13.386 5.51-13.956 12.513" />
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-col gap-4 items-center">
+        
+                  <span class="text-lg block text-center font-bold mt-4">
+                    پشتیبانی
+                  </span>
+        
+                  <p class="text-slate-800 text-justify">
+                    از ابتدا تا انتها همواره در کنار شما خواهیم بود و کلیه سوالات شما را
+                    پاسخ و کلیه مشکلات شما را رفع خواهیم نمود
+                  </p>
+                </div>
+              </div>
+        
+            </div>
+        
+        
           </div>
         </section>      </div>
       <!-- features section -->
 
       <!-- verify_docs section -->
-      <div id="verify_docs-section" class="w-full  mx-auto ">
-        <section class="py-10 sm:py-16 lg:py-12 px-6 lg:px-0 bg-white w-full">
+      <div id="verify_docs-section" class="w-full  mx-auto overflow-x-hidden">
+        <section class="py-10 sm:py-16 lg:py-12 px-12 md:px-6 lg:px-0 bg-white w-full">
             <!-- Section Header -->
             <div class="text-center">
               <h2 class="font-semibold text-3xl">مدارک مورد نیاز</h2>
@@ -571,9 +688,9 @@
               </p>
             </div>
         
-            <div class="grid grid-cols-2 grid-rows-1 pt-20 max-w-5xl mx-auto leading-[30px] relative">
+            <div class="grid grid-cols-2 grid-rows-1 pt-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto leading-[30px] relative">
               
-              <div class="pl-16" >
+              <div class="md:pl-8 lg:pl-16 col-span-2 md:col-span-1" >
                 <div class="flex items-center gap-2 mb-6">
                   <span class="size-12 p-1.5 bg-indigo-600 block rounded-xl text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047a9.005 9.005 0 0 1 5.9 8.181a.75.75 0 1 1-1.499.044a7.5 7.5 0 0 0-14.993 0a.75.75 0 0 1-1.5-.045a9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5M8 8a4 4 0 1 0 8 0a4 4 0 0 0-8 0" stroke-width="0.2" stroke="currentColor"/></svg>
@@ -623,26 +740,30 @@
                 </ul>
               </div>
         
-              <div class="relative">
+              <div class="relative hidden md:block self-center">
                 <div class="absolute -left-full top-1/2 -translate-y-1/2 opacity-50">
-                  <img src="/images/elec-patern.png" alt="">
+                  <img src="./images/elec-patern.png" alt="">
                 </div>
-                <div class="bg-indigo-600 top-1/2 -translate-y-1/2 relative shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden after:w-40 after:h-24 after:contents-[''] after:absolute after:right-56 after:top-1/2 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl ">
-                  <img src="/images/step-image.webp" class="w-[full] top-1/2 relative -left-1/2  z-20" alt="">
+                <div class="bg-indigo-600 relative shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden 
+                after:w-40 after:h-24 after:contents-[''] after:absolute after:right-56 after:top-1/2 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl "
+                data-aos="fade-right" data-aos-duration="1000">
+                  <img src="./images/step-image.webp" class="w-[full] top-1/2 relative -left-1/2  z-20" alt="">
                 </div>
               </div>
             </div>
         
-            <div class="grid grid-cols-2 grid-rows-1 pt-20 max-w-5xl mx-auto leading-[30px] relative">
-              <div class="relative">
+            <div class="grid grid-cols-2 grid-rows-1 pt-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto leading-[30px] relative">
+              <div class="relative hidden md:block self-center">
                 <div class="absolute -right-full top-1/2 -translate-y-1/2 opacity-50 scale-x-[-1]">
-                  <img src="/images/elec-patern.png" alt="">
+                  <img src="./images/elec-patern.png" alt="">
                 </div>
-                <div class="bg-indigo-600 top-1/2 -translate-y-1/2 shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden relative after:w-32 after:h-56 after:contents-[''] after:absolute after:right-36 after:top-1/3 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl">
-                  <img src="/images/step-image.webp" class="w-[full] top-1/2 relative -right-1/2 transform z-20" alt="">
+                <div class="bg-indigo-600 relative shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden 
+                after:w-32 after:h-56 after:contents-[''] after:absolute after:right-36 after:top-1/3 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl"
+                data-aos="fade-left" data-aos-duration="1000">
+                  <img src="./images/step-image.webp" class="w-[full] top-1/2 relative -right-1/2 transform z-20" alt="">
                 </div>
               </div>
-              <div class="pr-16" >
+              <div class="md:pr-8 lg:pr-16 col-span-2 md:col-span-1" >
                 <div class="flex items-center gap-2 mb-6">
                   <span class="size-12 p-1.5 bg-indigo-600 block rounded-xl text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path fill="currentColor" d="M232 224h-24V32h8a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16h8v192H24a8 8 0 0 0 0 16h208a8 8 0 0 0 0-16M64 32h128v192h-32v-40a8 8 0 0 0-8-8h-48a8 8 0 0 0-8 8v40H64Zm80 192h-32v-32h32ZM88 64a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8m48 0a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m-48 40a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8m48 0a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m-48 40a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8m48 0a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8" stroke-width="4" stroke="currentColor"/></svg>
@@ -720,11 +841,11 @@
           </div>
         
           <div
-            class="grid grid-cols-3 grid-rows-1 gap-6 py-20 max-w-5xl mx-auto leading-[30px] relative">
+            class="flex sm:flex-row flex-col md:grid md:grid-cols-2 px-4 sm:px-2 md:px-8 lg:px-4 xl:px-0 lg:grid-cols-8 xl:grid-cols-3 md:grid-rows-1 gap-6 py-20 lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto leading-[30px] relative">
         
-            <div class="flex flex-wrap gap-8 items-center py-4 z-10">
+            <div class="flex flex-wrap gap-8 items-center py-4 z-10 cls lg:col-span-3 xl:col-span-1">
               <div
-                class="w-full bg-white p-4 h-64 relative -right-12 hover:right-0 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
+                class="w-full bg-white p-4  relative xl:-right-12 hover:right-0 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
                 <h2 class="font-bold text-lg">
                   درگاه پرداخت اختصاصی
                 </h2>
@@ -734,7 +855,7 @@
                   کامل دسترسی خواهید داشت.
                 </p>
         
-                <div class="flex items-center gap-4 self-end">
+                <div class="flex md:flex-row sm:flex-col  items-center sm:items-start md:items-center gap-4 self-end">
         
                   <button type="button"
                     class="text-blue-700 hover:text-white transition duration-300 border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">درخواست
@@ -748,7 +869,7 @@
               </div>
         
               <div
-                class="w-full bg-white p-4 h-64 relative right-0 hover:-right-12 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
+                class="w-full bg-white p-4  relative right-0 hover:-right-12 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
                 <h2 class="font-bold text-lg">
                   فاکتور آنلاین
                 </h2>
@@ -757,7 +878,7 @@
                   مشتریان ایجاد و ارسال کنید و پرداخت را سریع‌تر دریافت نمایید.
                 </p>
         
-                <div class="flex items-center gap-4 self-end">
+                <div class="flex md:flex-row sm:flex-col  items-center sm:items-start md:items-center gap-4 self-end">
         
                      <button type="button"
                   disabled
@@ -772,7 +893,7 @@
         
             </div>
         
-            <div class="relative">
+            <div class="relative md:block hidden  lg:col-span-2 xl:col-span-1">
               <figure class="absolute">
                 <div
                   class="absolute inset-0 h-full w-full bg-transparent [&>div]:absolute [&>div]:left-1/2 [&>div]:-translate-x-1/2 [&>div]:top-10 [&>div]:z-0 [&>div]:m-auto [&>div]:h-3/4 [&>div]:w-3/4 [&>div]:rounded-full [&>div]:bg-blue-600 [&>div]:opacity-30 [&>div]:blur-[100px]">
@@ -780,13 +901,13 @@
         
                   </div>
                 </div>
-                <img src="/images/mobile.png" class="z-10 relative" alt="">
+                <img src="./images/mobile.png" class="z-10 relative" alt="">
               </figure>
             </div>
         
-            <div class="flex flex-wrap gap-8 items-center py-4 z-10">
+            <div class="flex flex-wrap gap-8 items-center py-4 z-10 md:col-span-2 md:mt-20 lg:mt-0 lg:col-span-3 xl:col-span-1">
               <div
-                class="w-full bg-white p-4 h-64 relative hover:-left-12 left-0 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
+                class="w-full bg-white p-4 relative hover:-left-12 left-0 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
                 <h2 class="font-bold text-lg">
                   درگاه پرداخت اشتراکی یا تسهیم
                 </h2>
@@ -796,7 +917,7 @@
                   متغیر بین شرکا تقسیم کرده و به حساب هر فرد واریز می‌کند.
                 </p>
         
-                <div class="flex items-center gap-4 self-end">
+                <div class="flex md:flex-row sm:flex-col  items-center sm:items-start md:items-center gap-4 self-end">
         
                   <button type="button"
                     class="text-blue-700 hover:text-white transition duration-300 border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">درخواست
@@ -810,7 +931,7 @@
               </div>
         
               <div
-                class="w-full bg-white p-4 relative -left-12 hover:left-0 h-64 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
+                class="w-full bg-white p-4 relative xl:-left-12 hover:left-0 rounded-xl shadow-md hover:shadow-slate-300 transition-all duration-300 flex flex-wrap gap-4">
                 <h2 class="font-bold text-lg">
                   لینک پرداخت اختصاصی همراه با QR Code
                 </h2>
@@ -820,7 +941,7 @@
                   اسکن کد پرداخت خود را انجام دهد.
                 </p>
         
-                <div class="flex items-center gap-4 self-end">
+                <div class="flex md:flex-row sm:flex-col  items-center sm:items-start md:items-center gap-4 self-end">
         
                   <button type="button"
                   disabled
@@ -839,7 +960,7 @@
         </section>
         
         <!-- 
-                <div class="bg-indigo-600 shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden relative after:w-32 after:h-64 after:contents-[''] after:absolute after:right-32 after:top-1/3 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl ">
+                <div class="bg-indigo-600 shadow-md shadow-indigo-800 vd_patern py-10 rounded-2xl overflow-hidden relative after:w-32 after: after:contents-[''] after:absolute after:right-32 after:top-1/3 after:mt-4 after:bg-gradient-to-t after:to-white/60 after:from-transparent after:rounded-2xl ">
                 
                 <img src="/images/step-image.webp" class="w-[full] top-1/2 -translate-y-1/2 relative -left-1/2  z-20" alt="">
               </div> -->      </div>
@@ -848,22 +969,22 @@
 
       <!-- Contact section -->
       <div id="contact-section" class="w-full  mx-auto ">
-        <section class="py-10 sm:py-16 lg:py-20 px-6 lg:px-0 bg-gradient-to-b to-white from-gray-100/75 w-full ">
+        <section class="py-10 sm:py-16 lg:py-20 sm:px-6 lg:px-0 bg-gradient-to-b to-white from-gray-100/75 w-full ">
           <!-- Section Header -->
         
         
-          <div class="max-w-5xl mx-auto grid grid-cols-2 justify-between gap-8 items-start">
-            <div class="">
+          <div class="lg:max-w-5xl md:max-w-2xl max-w-xl mx-auto grid px-0 sm:px-16 md:px-0 md:grid-cols-5 lg:grid-cols-2 justify-between gap-8 items-start">
+            <div class="md:col-span-2 lg:col-span-1 px-6 sm:px-0">
         
-              <div class="text-right flex flex-col gap-2 mb-8">
+              <div class="text-center md:text-right flex flex-col gap-2 mb-8">
                 <h2 class="font-semibold text-3xl">سه قابلیت مهم پاناپال برای شروع کار</h2>
                 <p class="w-full mt-2 text-gray-500">
                   با پاناپال، تجربه‌ای سریع، هوشمند و امن از پرداخت‌های آنلاین را آغاز کنید. در ادامه با سه ویژگی کلیدی که شروع کار با پاناپال را آسان می‌کنند آشنا شوید.
                 </p>
               </div>
         
-              <ul class="flex flex-col gap-8">
-                <li>
+              <ul class="flex flex-col gap-8 overflow-hidden">
+                <li data-aos="fade-down" data-aos-duration="500">
                   <div
                     class="gradient-border-mask-feature active flex gap-4 flex-col p-6 relative backdrop-blur-md z-20">
         
@@ -878,7 +999,7 @@
                   </div>
                 </li>
         
-                <li class="">
+                <li data-aos="fade-down" data-aos-duration="1000">
                   <div
                     class="gradient-border-mask-feature active flex gap-4 flex-col p-6 relative backdrop-blur-md z-20 shadow-md shadow-sky-600/30 rounded-xl">
         
@@ -893,7 +1014,7 @@
                   </div>
                 </li>
         
-                <li>
+                <li  data-aos="fade-down" data-aos-duration="1500">
                   <div
                     class="gradient-border-mask-feature active flex gap-4 flex-col p-6 relative backdrop-blur-md z-20">
         
@@ -911,7 +1032,7 @@
         
             </div>
         
-            <div class="bg-blue-100/75 shadow-md shadow-blue-100 p-6 rounded-2xl">
+            <div class="bg-blue-100/75 shadow-md shadow-blue-100 p-3 sm:p-6 rounded-2xl md:col-span-3 lg:col-span-1">
               <div class="bg-white p-6 rounded-2xl flex flex-col gap-6">
                 <div>
                   <h3 class="font-semibold text-lg">فرم تماس با ما</h3>
@@ -970,10 +1091,10 @@
  <footer class="py-12 bg-gradient-to-r to-blue-600 from-violet-700">
  
    <div>
-     <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-3 sm:grid-cols-2 mx-auto">
+     <div class="lg:max-w-5xl md:max-w-2xl px-4 sm:px-6 text-gray-800 grid lg:grid-cols-3 grid-cols-1 mx-auto">
        <div class="p-5">
          <div class="">
-           <img src="/images/footerlogo-1.png" alt="">
+           <img src="./images/footerlogo-1.png" alt="">
          </div>
          <p class="text-justify leading-8 text-white pt-4">
            پاناپال ؛ ارائه دهنده درگاه پرداخت اینترنتی با استفاده از فن آوری های نوین، مطابق الزامات فنی شبکه شابرک
@@ -1150,6 +1271,65 @@
    </div>
  
    <!-- Credit: HamidKamyab -->
+ 
+ 
+ 
+ <script>
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+     const swiperWrapper = document.getElementById("swiper-wrapper");
+     const swiperSlides = swiperWrapper.children;
+     const slideCount = swiperSlides.length;
+ 
+     let currentIndex = 0;
+     let slideWidth = swiperSlides[0].clientWidth;
+     
+     function cloneSlides(){
+         const slides = Array.from(swiperSlides);
+         slides.map(item=>{
+             const clone = item.cloneNode(true);
+             swiperWrapper.append(clone)
+         })
+         slides.map(item=>{
+             const clone = item.cloneNode(true);
+             swiperWrapper.append(clone)
+         })
+     }
+     cloneSlides()
+     function swiper(){
+         swiperWrapper.style.transition =  "transform 0.4s ease";
+         if(currentIndex < slideCount + 1){
+             swiperWrapper.style.transform= `translateX(${currentIndex * slideWidth}px)`;
+             currentIndex +=1;
+ 
+         }else{
+             swiperWrapper.style.transition =  "none";
+             swiperWrapper.style.transform= `translateX(${-0}px)`;
+             currentIndex = 1;
+ 
+             // بلافاصله حرکت بده با transition
+             requestAnimationFrame(() => {
+                 requestAnimationFrame(() => {
+                     swiperWrapper.style.transition = "transform 0.4s ease";
+                     swiperWrapper.style.transform = `translateX(${currentIndex * slideWidth}px)`;
+                     currentIndex += 1;
+                 });
+             });
+         }
+         
+ 
+     }
+ 
+     setInterval(swiper, 3000);
+     
+ })
+ 
+ </script>
+ 
+ 
+ 
+ 
+ 
  </footer> <!-- Footer -->
 
 
