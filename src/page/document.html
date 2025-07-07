@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درگاه پرداخت پاناپال</title>
+
+    <meta name="description"
+        content="با پاناپی، فروشگاه اینترنتی خود را در چند دقیقه راه‌اندازی کنید. بدون نیاز به دانش فنی، با قالب‌های حرفه‌ای، درگاه پرداخت، گزارش‌گیری و امکانات کامل. شروع فروش آنلاین همین امروز!" />
+
+    <meta name="keywords"
+        content="ساخت فروشگاه اینترنتی, فروشگاه‌ساز, پاناپی, درگاه پرداخت, فروش آنلاین, طراحی فروشگاه, فروشگاه ساز ایرانی, فروشگاه رایگان" />
+    <link rel="canonical" href="https://paanapay.ir/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="پاناپی | ساخت فروشگاه اینترنتی آسان" />
+    <meta property="og:description"
+        content="ساخت فروشگاه حرفه‌ای در چند دقیقه با پاناپی. بدون نیاز به برنامه‌نویسی، با امکانات کامل برای فروش آنلاین." />
+    <meta property="og:url" content="https://paanapay.ir/" />
+    <meta property="og:image" content="./assets/images/logo.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="پاناپی | ساخت فروشگاه اینترنتی در چند دقیقه" />
+    <meta name="twitter:description"
+        content="با پاناپی فروشگاه آنلاین خود را سریع، ساده و حرفه‌ای بسازید. بدون کدنویسی!" />
+    <meta name="twitter:image" content="./assets/images/logo.svg" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-224KTB3SQX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-224KTB3SQX');
+    </script>
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+    {{> _header }}
+
+    <main class="w-full mx-auto min-h-screen pt-36">
+        <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
+            <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl px-6 lg:px-0 flex flex-col">
+                <div class="pb-24">
+                    <div class="border-b border-gray-400 pb-4 mb-4">
+                        <h1 class="text-right text-3xl font-bold">
+                            مستندات و نمونه کدهای اتصال به وب سرویس
+                        </h1>
+                    </div>
+                    <div class="text-justify text-lg font-medium text-slate-600 leading-9">
+                        کلیه درخواست های ایجاد و شروع تراکنش باید به آدرس <span
+                            class="text-rose-600">https://paanapardakht.com/webservice/rest/PaymentRequest</span> و کلیه
+                        درخواست های بررسی وضعیت و Verify کردن تراکنش به آدرس <span
+                            class="text-rose-600">https://paanapardakht.com/webservice/rest/PaymentVerification</span>
+                        ارسال
+                        شوند, لذا در کد نویسی دقت داشته باشید آدرس وب سرویس RestFul به شکل زیر خواهد بود :
+                    </div>
+                    <div class="flex flex-col gap-6 mt-4">
+                        <div>
+                            <h3 class="font-semibold text-xl text-left text-slate-600" dir="ltr">
+                                Payment Request:
+                            </h3>
+                            <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                                dir="ltr"><code>https://paanapardakht.com/webservice/rest/PaymentRequest</code></pre>
+
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-xl text-left text-slate-600" dir="ltr">
+                                Payment Verify:
+                            </h3>
+                            <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                                dir="ltr"><code>https://paanapardakht.com/webservice/rest/PaymentVerification</code></pre>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="pb-24">
+                    <div class="border-b border-gray-400 pb-4 mb-4">
+                        <h2 class="text-right text-2xl font-bold">
+                            فرايند خريد ( Request )
+                        </h2>
+                    </div>
+                    <div class="text-justify text-lg font-medium text-slate-600 leading-9">
+                        سایت مبدا براي ایجاد و شروع تراکنش باید با توجه به جدول زیر, اطلاعات و دیتاهای مورد نیاز را به
+                        آدرس <span class="text-rose-600">https://paanapardakht.com/webservice/rest/PaymentRequest</span>
+                        و به شیوه <span class="text-rose-600">POST</span> ارسال نماید
+                    </div>
+                    <div class="flex flex-col gap-6 mt-6">
+
+                        <table>
+                            <thead>
+                                <tr class="text-gray-600">
+                                    <th class="text-center border p-3 text-lg">پارامتر</th>
+                                    <th class="text-center border p-3 text-lg">نوع</th>
+                                    <th class="text-center border p-3 text-lg">وضعیت</th>
+                                    <th class="text-center border p-3 text-lg">شرح</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-lg">
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>MerchantID</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                    <td class="text-right border p-3">مرچنت آیدی در بخش " درگاهای من " در پنل کاربری شما
+                                        در قابل مشاهده میباشد</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>Amount</code></td>
+                                    <td class="text-center border p-3">integer</td>
+                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                    <td class="text-right border p-3">مبلغی که در تراکنش ارسال و قابل پرداخت میباشد,
+                                        واحد مبلغ ارسالی تومان و حداقل مبلغ قابل پرداخت 100 تومان میباشد</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>InvoiceID</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                    <td class="text-right border p-3">شناسه, این شناسه پس از پرداخت برای سایت فروشنده
+                                        ارسال خواهد شد</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>Description</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                    <td class="text-right border p-3">توضيحات مربوط تراكنش</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>Email</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                    <td class="text-right border p-3">آدرس ایمیل خریدار</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>Mobile</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                    <td class="text-right border p-3">شماره تماس خریدار</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>CallbackURL</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                    <td class="text-right border p-3">صفحه بازگشت مشتري، پس از انجام عمل پرداخت</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center border p-3 text-rose-600"><code>AllowCard</code></td>
+                                    <td class="text-center border p-3">string</td>
+                                    <td class="text-center border p-3"><span class="red">اختیاری</span></td>
+                                    <td class="text-right border p-3">شماره کارت پرداخت کننده<br><small
+                                            class="text-green-800">به منظور محدود سازی امکان پرداخت تنها توسط یک کارت,
+                                            شماره 16 رقمی کارت را بدون خط تیره و بدون فاصله وارد کنید.</small></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2 class="text-right text-xl font-bold mt-8">
+                            لیست داده هاي برگشتی در پاسخ به فرايند خريد ( Request )
+                        </h2>
+
+                        <table>
+                            <thead class="text-gray-600">
+                                <tr>
+                                    <th class="border text-center p-3 text-lg">پارامتر</th>
+                                    <th class="border text-center p-3 text-lg">شرح</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-lg">
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
+                                    <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن برابر
+                                        100 در
+                                        غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
+                                            class="text-green-800 font-semibold"
+                                            href="https://paanapardakht.com/public/response" target="_blank">کدهای
+                                            برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
+                                    <td class="text-right border p-3">شناسه مرجع درخواست، درصورت موفق بودن داراي طوال 32
+                                        كاراكتر و در غير اينصورت خالي ميباشد</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>PaymentUrl</code></td>
+                                    <td class="text-right border p-3">لینکی که کاربر به منظور پرداخت باید به آن انتقال
+                                        داده
+                                        شود</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>PaymentForm</code></td>
+                                    <td class="text-right border p-3">فرم انتقال کاربر به لینک و صفحه پرداخت, خروجی این
+                                        فرم
+                                        به صورت HTML بوده که شامل لینک پرداخت می باشد و با فراخوانی آن کاربر به صورت
+                                        خودکار به صفحه پرداخت هدایت خواهد شد</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="text-justify leading-9 text-lg font-medium text-slate-600 ">
+                            در صورت صحت داده ها پاناپال یک داده از نوع string به طول 32 کاراکتر ( که Authority نام دارد
+                            ) و یک داده با نام Status برابر 100 بر می گرداند و سایت پذیرنده پس از دریافت این داده ها،
+                            مشتري را به سایت پاناپال هدایت می نماید, توجه داشته باشید که در داده های برگشتی در صورتی که
+                            مقدار Status برابر با 100 نباشد, برابر با یک عدد منفی خواهد بود که شرح خطاهای هر عدد منفی را
+                            در تب <a href="https://paanapardakht.com/public/response"
+                                class="text-black font-semibold hover:underline hover:text-green-800 transition-all duration-100"
+                                target="_blank">کدهای برگشتی /
+                                خطا‌ها</a> مشاهده کنید.
+                        </p>
+
+                        <p class="py-8 text-lg font-medium text-slate-600 ">
+                            بعد از پايان عمليات درسمت پاناپال, پاناپال وظيفه دارد كاربر را به سايت پذيرنده كه از طريق
+                            <span class="text-rose-600">CallbackURL</span> مشخص شده است بازگرداند.
+                        </p>
+
+                        <p class="text-justify leading-9 text-lg font-medium text-slate-600 ">
+                            بطور مثال در صورتی که مقدار Status برابر با 100 و مقدار Authority دارای یک کد 32 کاراکتری
+                            <small class="text-slate-500 font-medium">( به عنوان مثال : <span
+                                    class="font-vazir">F5122EEC8CA035EC3A3C7318B333BB28</span> )</small> باشد بمنظور
+                            اتصال به درگاه بانکی و انجام عملیات پرداخت کاربر باید به آدرس زیر هدایت شود :
+                        </p>
+
+                        <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code>https://paanapardakht.com/startPay/F5122EEC8CA035EC3A3C7318B333BB28</code></pre>
+
+                        <h2 class="text-right text-xl font-bold mt-8">
+                            نمونه کد PHP ایجاد شناسه ی پرداخت ( Authority ) و ارجاع کاربر به درگاه پرداخت
+                        </h2>
+                        <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code>&lt;?php
+$MerchantID 	= &quot;XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXXX&quot;;
+$Amount 	= 1000;
+$InvoiceID 	= 10;
+$Description 	= &quot;Payment ID 10&quot;;
+$Email 		= &quot;buyer@example.com&quot;;
+$Mobile 	= &quot;09123456789&quot;;
+$CallbackURL 	= &quot;http://example.com/verify.php&quot;;
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, &#39;https://paanapardakht.com/webservice/rest/PaymentRequest&#39;);
+curl_setopt($curl, CURLOPT_HTTPHEADER, array(&#39;Content-Type&#39; =&gt; &#39;application/json&#39;));
+curl_setopt($curl, CURLOPT_POSTFIELDS, &quot;MerchantID={$MerchantID}&amp;Amount={$Amount}&amp;InvoiceID={$InvoiceID}&amp;Description={$Description}&amp;Email={$Email}&amp;Mobile={$Mobile}&amp;CallbackURL=&quot;. urlencode($CallbackURL));
+curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$curl_exec = curl_exec($curl);
+curl_close($curl);
+
+$result = json_decode($curl_exec);
+
+if (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status == 100)
+{
+	header(&quot;Location: {$result-&gt;PaymentUrl}&quot;);
+} else {
+	echo (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status != &quot;&quot;) ? $result-&gt;Status : &quot;Error connecting to web service&quot;;
+}
+?&gt;</code></pre>
+                    </div>
+
+
+                </div>
+
+
+                <div class="pb-24">
+                    <div class="border-b border-gray-400 pb-4 mb-4">
+                        <h2 class="text-right text-2xl font-bold">
+                            فرایند بررسی وضعیت و نتیجه تراکنش ( Callback / Verify )
+                        </h2>
+                    </div>
+
+                    <div class="text-justify text-lg font-medium text-slate-600 leading-9">
+                        در صفحه CallbackURL پذيرنده وظيفه دارد درخواست معادل با <span
+                            class="text-rose-600">Authority</span> و <span class="text-rose-600">PaymentStatus</span> كه
+                        از طـرف
+                        پاناپال و بـه صـورت <span class="text-rose-600">POST</span> به آدرس CallbackURL ارسال شده است را
+                        دریافت نموده و در صورتی که مقدار
+                        PaymentStatus دریافت شده برابر با <b>" OK "</b> بود, داده‌های جدول زیر را از طریق متـد <span
+                            class="text-rose-600">POST</span> به آدرس
+                        <span class="text-rose-600">https://paanapardakht.com/webservice/rest/PaymentVerification</span>
+                        ارسال نموده و پاسخ دریافتی را چـك
+                        نمايد و در صورت موفق بودن، پرداخت را ثبت و شماره تراكنش را به كاربر خريدار نمايش دهد ؛ در غير
+                        اينصورت پذيرنده موظف اسـت كـه بـا توجه به كد خطايي كه دريافت ميكند كاربر را از خطاي رخ داده مطلع
+                        سازد. همچنین توجه داشته باشید در صورتی PaymentStatus برابر با <b>" NOK "</b> باشد, تراکنش ناموفق
+                        بوده و
+                        نیازی به ارسال درخواست <span class="text-rose-600">PaymentVerification</span> نیست.
+                    </div>
+
+
+                    <div class="flex flex-col gap-6 mt-6">
+                        <div class="text-justify text-lg font-medium text-slate-600 leading-9 mt-2">
+                            براي Verify کردن تراکنش باید اطلاعات و دیتاهای مورد نیاز را طبق جدول زیر به آدرس
+                            <span
+                                class="text-rose-600">https://paanapardakht.com/webservice/rest/PaymentVerification</span>
+                            از طریق متد <span class="text-rose-600">POST</span> ارسال کند
+                        </div>
+
+                        <table>
+                            <thead class="text-gray-600">
+                                <tr>
+                                    <th class="border text-center p-3 text-lg">پارامتر</th>
+                                    <th class="border text-center p-3 text-lg">نوع</th>
+                                    <th class="border text-center p-3 text-lg">وضعیت</th>
+                                    <th class="border text-center p-3 text-lg">شرح</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-lg">
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>MerchantID</code></td>
+                                    <td class="border text-center p-3">string</td>
+                                    <td class="border text-center p-3">اجباری</td>
+                                    <td class="text-right border p-3">
+                                        مرچنت آیدی در بخش " درگاهای من " در پنل کاربری شما در قابل مشاهده می باشد
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
+                                    <td class="border text-center p-3">string</td>
+                                    <td class="border text-center p-3">اجباری</td>
+                                    <td class="text-right border p-3">كد يكتاي شناسه مرجع درخواست</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
+                                    <td class="border text-center p-3">integer</td>
+                                    <td class="border text-center p-3">اجباری</td>
+                                    <td class="text-right border p-3">مبلغ فاکتور به تومان - مبلغ ارسالی باید با مبلغ
+                                        اولیه فاکتور در زمان ایجاد تراکنش یکسان باشد</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <h2 class="text-right text-xl font-bold mt-8">
+                            لیست داده هاي برگشتی در پاسخ به فرايند استعلام تراکنش ( Verify )
+                        </h2>
+
+                        <table>
+                            <thead class="text-gray-600">
+                                <tr>
+                                    <th class="border text-center p-3 text-lg">پارامتر</th>
+                                    <th class="border text-center p-3 text-lg">شرح</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-lg">
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
+                                    <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن برابر
+                                        100 در
+                                        غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
+                                            class="text-green-800 font-semibold"
+                                            href="https://paanapardakht.com/public/response" target="_blank">کدهای
+                                            برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>RefID</code></td>
+                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره تراكنش پرداخت
+                                        انجام شده را بر مي گرداند</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
+                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ مبلغ پرداخت شده (
+                                        مبلغ به تومان می باشد ) را بر می گرداند</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>BuyerIP</code></td>
+                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ IP خریدار را بر
+                                        میگرداند</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>PaymentTime</code></td>
+                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ زمان پرداخت تراکنش (
+                                        خروجی زمان پرداخت به صورت timestamp می باشد ) را بر می گرداند</td>
+                                </tr>
+                                <tr>
+                                    <td class="border text-center p-3 text-rose-600"><code>MaskCardNumber</code></td>
+                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره کارت Mask شده
+                                        خریدار ( شماره کارتی که پرداخت وجه توسط آن انجام شده است ) را بر می گرداند</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div class="text-justify text-lg font-medium text-slate-600 leading-9 mt-2">
+                            در صورتی که مقدار بازگشتی Status در فرایند استعلام تراکنش از طریق <span
+                                class="text-rose-600">PaymentVerification</span> برابر
+                            با 100 باشد تراکنش بدرستی انجام شده است در غیر اینصورت مقدار بازگشتی برابر با یک عدد منفی
+                            خواهد بود که شرح خطاهای مرتبط با هر عدد منفی بازگشتی را میتوانید در تب <a
+                                class="text-green-800 font-semibold" href="https://paanapardakht.com/public/response"
+                                target="_blank">کدهای برگشتی / خطا‌ها</a>
+                            بررسی کنید.
+                        </div>
+
+
+                        <h2 class="text-right text-xl font-bold mt-8">
+                            نمونه کد Callback و Verify کردن تراکنش
+                        </h2>
+
+<pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code>&lt;?php
+$MerchantID 	= &#39;XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXXX&#39;;
+$Amount 	= 1000;
+
+if (isset($_POST[&#39;PaymentStatus&#39;]) &amp;&amp; $_POST[&#39;PaymentStatus&#39;] == &#39;OK&#39;)
+{
+	$Authority 	= (isset($_POST[&#39;Authority&#39;]) &amp;&amp; $_POST[&#39;Authority&#39;] != &quot;&quot;) ? $_POST[&#39;Authority&#39;] : &quot;&quot;;
+	$InvoiceID 	= (isset($_POST[&#39;InvoiceID&#39;]) &amp;&amp; $_POST[&#39;InvoiceID&#39;] != &quot;&quot;) ? $_POST[&#39;InvoiceID&#39;] : &quot;&quot;;
+
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, &#39;https://paanapardakht.com/webservice/rest/PaymentVerification&#39;);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array(&#39;Content-Type&#39; =&gt; &#39;application/json&#39;));
+	curl_setopt($curl, CURLOPT_POSTFIELDS, &quot;MerchantID={$MerchantID}&amp;Amount={$Amount}&amp;Authority={$Authority}&quot;);
+	curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	$curl_exec = curl_exec($curl);
+	curl_close($curl);
+
+	$result = json_decode($curl_exec);
+
+	if (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status == 100)
+	{
+		echo &#39;Transation success. Amount : &#39;. $result-&gt;Amount .&#39; Toman AND RefID : &#39;. $result-&gt;RefID;
+	} else {
+		echo (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status != &quot;&quot;) ? $result-&gt;Status : &quot;Error connecting to web service&quot;;
+	}
+} else {
+	echo &#39;Transaction Canceled By User&#39;;
+}
+?&gt;</code></pre>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    {{> _footer }}
+    <!-- Footer -->
+
+    <script type="module" defer src="/assets/javascripts/main.js"></script>
+
+</body>
+
+</html>

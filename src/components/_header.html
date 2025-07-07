@@ -40,7 +40,7 @@
     <nav  x-data="nav()" x-init="init()" class="fixed w-screen z-40 top-0 bg-white/20 backdrop-blur-lg left-0">
       <div class="px-4 py-4 flex justify-between items-center w-screen max-w-7xl mx-auto relative z-10">
         <div>
-          <a class="block w-24"><img src="images/logo.svg" /></a>
+          <a class="block w-24"><img src="/images/logo.svg" /></a>
         </div>
 
         <div class="flex items-center gap-8 relative">
@@ -58,7 +58,7 @@
 
             <ul x-data="{openSubmenu:0}"  @click.outside="openSubmenu = 0" class="flex flex-col lg:flex-row w-screen lg:w-auto items-center gap-6">
               <li class="w-[calc(100%-10px)] lg:w-auto">
-                <a href="" class="block py-1 text-center">
+                <a href="/page/document" class="block py-1 text-center">
                   مستندات
                 </a>
               </li>
@@ -170,8 +170,8 @@
           </div>
 
          <div class="flex items-center gap-2">
-           <div class="gradient-border-mask-btn w-[120px] h-[40px]">
-              <a href="#" class="absolute z-20 size-full text-sm block top-0 left-0 text-center leading-[40px]">
+           <div class="gradient-border-mask-btn w-[130px] h-[44px] font-medium">
+              <a href="#" class="absolute z-20 size-full block top-0 left-0 text-center leading-[44px]">
                  کنترل پنل کاربری
               </a>
           </div>

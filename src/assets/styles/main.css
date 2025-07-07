@@ -17,14 +17,14 @@
 @layer components {
 
 
-.gradient-border-mask-feature ,.gradient-border-mask-btn {
+.gradient-border-mask-contact ,.gradient-border-mask-btn {
   position: relative;
   padding: 0.8rem 1rem;
   backdrop-filter: blur(10px);
 }
 .gradient-border-mask-btn {  overflow: hidden !important;
 }
-.gradient-border-mask-feature::before ,.gradient-border-mask-btn::before {
+.gradient-border-mask-contact::before ,.gradient-border-mask-btn::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -33,16 +33,16 @@
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
-.gradient-border-mask-feature::before{
+.gradient-border-mask-contact::before{
   background: linear-gradient(140deg, #ececec,#bbb) border-box;
 }
 
-.gradient-border-mask-feature:hover > .gradient-border-mask-feature::before, .gradient-border-mask-feature.active::before ,.gradient-border-mask-feature:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #234cdf,#00aeff) border-box; }
-.gradient-border-mask-feature.active::before{
+.gradient-border-mask-contact:hover > .gradient-border-mask-contact::before, .gradient-border-mask-contact.active::before ,.gradient-border-mask-contact:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #234cdf,#00aeff) border-box; }
+.gradient-border-mask-contact.active::before{
   border: 3px solid transparent;
 }
 
-.gradient-border-mask-feature::after ,.gradient-border-mask-btn::after{
+.gradient-border-mask-contact::after ,.gradient-border-mask-btn::after{
   content: "";
   display: block;
   top: 0;
@@ -61,7 +61,7 @@
   background: linear-gradient(140deg, #234cdf,#00aeff) border-box;
 
 }
-.gradient-border-mask-feature::after{
+.gradient-border-mask-contact::after{
   background-color: #ffffff;
   opacity: 0.4;
 }
