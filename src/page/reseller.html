@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درگاه پرداخت پاناپال</title>
+
+    <meta name="description"
+        content="با پاناپی، فروشگاه اینترنتی خود را در چند دقیقه راه‌اندازی کنید. بدون نیاز به دانش فنی، با قالب‌های حرفه‌ای، درگاه پرداخت، گزارش‌گیری و امکانات کامل. شروع فروش آنلاین همین امروز!" />
+
+    <meta name="keywords"
+        content="ساخت فروشگاه اینترنتی, فروشگاه‌ساز, پاناپی, درگاه پرداخت, فروش آنلاین, طراحی فروشگاه, فروشگاه ساز ایرانی, فروشگاه رایگان" />
+    <link rel="canonical" href="https://paanapay.ir/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="پاناپی | ساخت فروشگاه اینترنتی آسان" />
+    <meta property="og:description"
+        content="ساخت فروشگاه حرفه‌ای در چند دقیقه با پاناپی. بدون نیاز به برنامه‌نویسی، با امکانات کامل برای فروش آنلاین." />
+    <meta property="og:url" content="https://paanapay.ir/" />
+    <meta property="og:image" content="./assets/images/logo.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="پاناپی | ساخت فروشگاه اینترنتی در چند دقیقه" />
+    <meta name="twitter:description"
+        content="با پاناپی فروشگاه آنلاین خود را سریع، ساده و حرفه‌ای بسازید. بدون کدنویسی!" />
+    <meta name="twitter:image" content="./assets/images/logo.svg" />
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-224KTB3SQX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-224KTB3SQX');
+    </script>
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+    {{> _header }}
+
+
+    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100">
+        <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
+            <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl w-full px-6 lg:px-0 flex flex-col">
+                <div class="w-full px-16">
+                    <h1 class="text-right text-3xl font-bold border-b border-gray-400 pb-4 mb-4">
+                            لیست نمایندگان و بازاریابان
+                    </h1>
+
+					<input type="text" id="responseSearchInput" onkeyup="responseSearch()" placeholder="جستجوی کد ..." 
+                    class="w-full h-12 px-4 text-xl" >
+
+					<table id="responseTable" class="w-full mt-4 bg-white" >
+						<tbody>
+                            <tr class="header text-gray-600">
+							    <th class="active border border-gray-400 py-3 w-3/5">نماینده</th>
+							    <th class="active border border-gray-400 py-3 w-1/5">شناسه نماینده</th>
+							    <th class="active border border-gray-400 py-3 w-1/5">عملیات</th>
+						    </tr>
+                        </tbody>
+						
+						<!-- <?php
+						$db_response = $db->query("SELECT * FROM `user` WHERE `reseller` = 'YES'");
+						
+						while($response = $db_response->fetch_assoc())
+						{
+							echo "<tr>
+								<td class="text-right border border-gray-400 py-3">{$response['first_name']} {$response['last_name']}</td>
+								<td class="text-center border border-gray-400 py-3 active" dir='ltr'><b>{$site->english($response['affiliate_code'])}</b></td>
+								<td class="text-center border border-gray-400 py-3"><a href='{$CONF['site_url']}/?r={$site->english($response['affiliate_code'])}&do=register' class='btn btn-primary btn-block'>انتخاب نماینده</td>
+							</tr>";
+						}
+						?> -->
+					</table>
+
+					<!-- <script>
+					function responseSearch() {
+						var input, filter, table, tr, td, i;
+
+						input 	= document.getElementById("responseSearchInput");
+						filter 	= input.value.toUpperCase();
+						table 	= document.getElementById("responseTable");
+						tr 		= table.getElementsByTagName("tr");
+
+						for (i = 0; i < tr.length; i++) {
+							td = tr[i].getElementsByTagName("td")[0];
+							if (td) {
+								if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+									tr[i].style.display = "";
+								} else {
+									tr[i].style.display = "none";
+								}
+							}
+						}
+					}
+					</script> -->
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    {{> _footer }}
+    <!-- Footer -->
+
+    <script type="module" defer src="/assets/javascripts/main.js"></script>
+
+</body>
+
+</html>
