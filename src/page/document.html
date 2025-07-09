@@ -51,10 +51,10 @@
 
     <main class="w-full mx-auto min-h-screen pt-36">
         <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
-            <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl px-6 lg:px-0 flex flex-col">
+            <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl w-full px-6 lg:px-0 flex flex-col">
                 <div class="pb-24">
                     <div class="border-b border-gray-400 pb-4 mb-4">
-                        <h1 class="text-right text-3xl font-bold">
+                        <h1 class="text-right text-3xl font-semibold">
                             مستندات و نمونه کدهای اتصال به وب سرویس
                         </h1>
                     </div>
@@ -71,8 +71,8 @@
                             <h3 class="font-semibold text-xl text-left text-slate-600" dir="ltr">
                                 Payment Request:
                             </h3>
-                            <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
-                                dir="ltr"><code>https://paanapardakht.com/webservice/rest/PaymentRequest</code></pre>
+                            <pre class="font-vazir w-full overflow-auto text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                                dir="ltr"><code class="min-w-[600px]">https://paanapardakht.com/webservice/rest/PaymentRequest</code></pre>
 
                         </div>
 
@@ -80,8 +80,8 @@
                             <h3 class="font-semibold text-xl text-left text-slate-600" dir="ltr">
                                 Payment Verify:
                             </h3>
-                            <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
-                                dir="ltr"><code>https://paanapardakht.com/webservice/rest/PaymentVerification</code></pre>
+                            <pre class="font-vazir w-full overflow-auto text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                                dir="ltr"><code class="min-w-[600px]">https://paanapardakht.com/webservice/rest/PaymentVerification</code></pre>
                         </div>
 
                     </div>
@@ -101,113 +101,124 @@
                     </div>
                     <div class="flex flex-col gap-6 mt-6">
 
-                        <table>
-                            <thead>
-                                <tr class="text-gray-600">
-                                    <th class="text-center border p-3 text-lg">پارامتر</th>
-                                    <th class="text-center border p-3 text-lg">نوع</th>
-                                    <th class="text-center border p-3 text-lg">وضعیت</th>
-                                    <th class="text-center border p-3 text-lg">شرح</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-gray-600 text-lg">
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>MerchantID</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
-                                    <td class="text-right border p-3">مرچنت آیدی در بخش " درگاهای من " در پنل کاربری شما
-                                        در قابل مشاهده میباشد</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>Amount</code></td>
-                                    <td class="text-center border p-3">integer</td>
-                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
-                                    <td class="text-right border p-3">مبلغی که در تراکنش ارسال و قابل پرداخت میباشد,
-                                        واحد مبلغ ارسالی تومان و حداقل مبلغ قابل پرداخت 100 تومان میباشد</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>InvoiceID</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
-                                    <td class="text-right border p-3">شناسه, این شناسه پس از پرداخت برای سایت فروشنده
-                                        ارسال خواهد شد</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>Description</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
-                                    <td class="text-right border p-3">توضيحات مربوط تراكنش</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>Email</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
-                                    <td class="text-right border p-3">آدرس ایمیل خریدار</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>Mobile</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
-                                    <td class="text-right border p-3">شماره تماس خریدار</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>CallbackURL</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="red">اجباری</span></td>
-                                    <td class="text-right border p-3">صفحه بازگشت مشتري، پس از انجام عمل پرداخت</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center border p-3 text-rose-600"><code>AllowCard</code></td>
-                                    <td class="text-center border p-3">string</td>
-                                    <td class="text-center border p-3"><span class="red">اختیاری</span></td>
-                                    <td class="text-right border p-3">شماره کارت پرداخت کننده<br><small
-                                            class="text-green-800">به منظور محدود سازی امکان پرداخت تنها توسط یک کارت,
-                                            شماره 16 رقمی کارت را بدون خط تیره و بدون فاصله وارد کنید.</small></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="w-full overflow-x-auto">
+                            <table class="min-w-[600px]">
+                                <thead>
+                                    <tr class="text-gray-600">
+                                        <th class="text-center border p-3 text-lg">پارامتر</th>
+                                        <th class="text-center border p-3 text-lg">نوع</th>
+                                        <th class="text-center border p-3 text-lg">وضعیت</th>
+                                        <th class="text-center border p-3 text-lg">شرح</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600 text-lg">
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>MerchantID</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                        <td class="text-right border p-3">مرچنت آیدی در بخش " درگاهای من " در پنل کاربری
+                                            شما
+                                            در قابل مشاهده میباشد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>Amount</code></td>
+                                        <td class="text-center border p-3">integer</td>
+                                        <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                        <td class="text-right border p-3">مبلغی که در تراکنش ارسال و قابل پرداخت میباشد,
+                                            واحد مبلغ ارسالی تومان و حداقل مبلغ قابل پرداخت 100 تومان میباشد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>InvoiceID</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                        <td class="text-right border p-3">شناسه, این شناسه پس از پرداخت برای سایت
+                                            فروشنده
+                                            ارسال خواهد شد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>Description</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                        <td class="text-right border p-3">توضيحات مربوط تراكنش</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>Email</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                        <td class="text-right border p-3">آدرس ایمیل خریدار</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>Mobile</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="blue">اختیاری</span></td>
+                                        <td class="text-right border p-3">شماره تماس خریدار</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>CallbackURL</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="red">اجباری</span></td>
+                                        <td class="text-right border p-3">صفحه بازگشت مشتري، پس از انجام عمل پرداخت</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center border p-3 text-rose-600"><code>AllowCard</code></td>
+                                        <td class="text-center border p-3">string</td>
+                                        <td class="text-center border p-3"><span class="red">اختیاری</span></td>
+                                        <td class="text-right border p-3">شماره کارت پرداخت کننده<br><small
+                                                class="text-green-800">به منظور محدود سازی امکان پرداخت تنها توسط یک
+                                                کارت,
+                                                شماره 16 رقمی کارت را بدون خط تیره و بدون فاصله وارد کنید.</small></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                         <h2 class="text-right text-xl font-bold mt-8">
                             لیست داده هاي برگشتی در پاسخ به فرايند خريد ( Request )
                         </h2>
+                        <div class="w-full overflow-x-auto">
+                            <table class="min-w-[600px]">
+                                <thead class="text-gray-600">
+                                    <tr>
+                                        <th class="border text-center p-3 text-lg">پارامتر</th>
+                                        <th class="border text-center p-3 text-lg">شرح</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600 text-lg">
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
+                                        <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن
+                                            برابر
+                                            100 در
+                                            غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
+                                                class="text-green-800 font-semibold"
+                                                href="https://paanapardakht.com/public/response" target="_blank">کدهای
+                                                برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
+                                        <td class="text-right border p-3">شناسه مرجع درخواست، درصورت موفق بودن داراي
+                                            طوال 32
+                                            كاراكتر و در غير اينصورت خالي ميباشد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>PaymentUrl</code></td>
+                                        <td class="text-right border p-3">لینکی که کاربر به منظور پرداخت باید به آن
+                                            انتقال
+                                            داده
+                                            شود</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>PaymentForm</code></td>
+                                        <td class="text-right border p-3">فرم انتقال کاربر به لینک و صفحه پرداخت, خروجی
+                                            این
+                                            فرم
+                                            به صورت HTML بوده که شامل لینک پرداخت می باشد و با فراخوانی آن کاربر به صورت
+                                            خودکار به صفحه پرداخت هدایت خواهد شد</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                        <table>
-                            <thead class="text-gray-600">
-                                <tr>
-                                    <th class="border text-center p-3 text-lg">پارامتر</th>
-                                    <th class="border text-center p-3 text-lg">شرح</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-gray-600 text-lg">
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
-                                    <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن برابر
-                                        100 در
-                                        غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
-                                            class="text-green-800 font-semibold"
-                                            href="https://paanapardakht.com/public/response" target="_blank">کدهای
-                                            برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
-                                    <td class="text-right border p-3">شناسه مرجع درخواست، درصورت موفق بودن داراي طوال 32
-                                        كاراكتر و در غير اينصورت خالي ميباشد</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>PaymentUrl</code></td>
-                                    <td class="text-right border p-3">لینکی که کاربر به منظور پرداخت باید به آن انتقال
-                                        داده
-                                        شود</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>PaymentForm</code></td>
-                                    <td class="text-right border p-3">فرم انتقال کاربر به لینک و صفحه پرداخت, خروجی این
-                                        فرم
-                                        به صورت HTML بوده که شامل لینک پرداخت می باشد و با فراخوانی آن کاربر به صورت
-                                        خودکار به صفحه پرداخت هدایت خواهد شد</td>
-                                </tr>
-                            </tbody>
-                        </table>
 
                         <p class="text-justify leading-9 text-lg font-medium text-slate-600 ">
                             در صورت صحت داده ها پاناپال یک داده از نوع string به طول 32 کاراکتر ( که Authority نام دارد
@@ -232,14 +243,14 @@
                             اتصال به درگاه بانکی و انجام عملیات پرداخت کاربر باید به آدرس زیر هدایت شود :
                         </p>
 
-                        <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
-                            dir="ltr"><code>https://paanapardakht.com/startPay/F5122EEC8CA035EC3A3C7318B333BB28</code></pre>
+                        <pre class="font-vazir w-full overflow-auto text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code class="min-w-[600px]">https://paanapardakht.com/startPay/F5122EEC8CA035EC3A3C7318B333BB28</code></pre>
 
                         <h2 class="text-right text-xl font-bold mt-8">
                             نمونه کد PHP ایجاد شناسه ی پرداخت ( Authority ) و ارجاع کاربر به درگاه پرداخت
                         </h2>
-                        <pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
-                            dir="ltr"><code>&lt;?php
+                        <pre class="font-vazir w-full overflow-auto text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code class="min-w-[600px]">&lt;?php
 $MerchantID 	= &quot;XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXXX&quot;;
 $Amount 	= 1000;
 $InvoiceID 	= 10;
@@ -306,92 +317,102 @@ if (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status == 100)
                             از طریق متد <span class="text-rose-600">POST</span> ارسال کند
                         </div>
 
-                        <table>
-                            <thead class="text-gray-600">
-                                <tr>
-                                    <th class="border text-center p-3 text-lg">پارامتر</th>
-                                    <th class="border text-center p-3 text-lg">نوع</th>
-                                    <th class="border text-center p-3 text-lg">وضعیت</th>
-                                    <th class="border text-center p-3 text-lg">شرح</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-gray-600 text-lg">
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>MerchantID</code></td>
-                                    <td class="border text-center p-3">string</td>
-                                    <td class="border text-center p-3">اجباری</td>
-                                    <td class="text-right border p-3">
-                                        مرچنت آیدی در بخش " درگاهای من " در پنل کاربری شما در قابل مشاهده می باشد
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
-                                    <td class="border text-center p-3">string</td>
-                                    <td class="border text-center p-3">اجباری</td>
-                                    <td class="text-right border p-3">كد يكتاي شناسه مرجع درخواست</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
-                                    <td class="border text-center p-3">integer</td>
-                                    <td class="border text-center p-3">اجباری</td>
-                                    <td class="text-right border p-3">مبلغ فاکتور به تومان - مبلغ ارسالی باید با مبلغ
-                                        اولیه فاکتور در زمان ایجاد تراکنش یکسان باشد</td>
-                                </tr>
+                        <div class="w-full overflow-x-auto">
+                            <table class="min-w-[600px]">
+                                <thead class="text-gray-600">
+                                    <tr>
+                                        <th class="border text-center p-3 text-lg">پارامتر</th>
+                                        <th class="border text-center p-3 text-lg">نوع</th>
+                                        <th class="border text-center p-3 text-lg">وضعیت</th>
+                                        <th class="border text-center p-3 text-lg">شرح</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600 text-lg">
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>MerchantID</code></td>
+                                        <td class="border text-center p-3">string</td>
+                                        <td class="border text-center p-3">اجباری</td>
+                                        <td class="text-right border p-3">
+                                            مرچنت آیدی در بخش " درگاهای من " در پنل کاربری شما در قابل مشاهده می باشد
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Authority</code></td>
+                                        <td class="border text-center p-3">string</td>
+                                        <td class="border text-center p-3">اجباری</td>
+                                        <td class="text-right border p-3">كد يكتاي شناسه مرجع درخواست</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
+                                        <td class="border text-center p-3">integer</td>
+                                        <td class="border text-center p-3">اجباری</td>
+                                        <td class="text-right border p-3">مبلغ فاکتور به تومان - مبلغ ارسالی باید با
+                                            مبلغ
+                                            اولیه فاکتور در زمان ایجاد تراکنش یکسان باشد</td>
+                                    </tr>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
 
                         <h2 class="text-right text-xl font-bold mt-8">
                             لیست داده هاي برگشتی در پاسخ به فرايند استعلام تراکنش ( Verify )
                         </h2>
+                        <div class="w-full overflow-x-auto">
+                            <table class="min-w-[600px]">
+                                <thead class="text-gray-600">
+                                    <tr>
+                                        <th class="border text-center p-3 text-lg">پارامتر</th>
+                                        <th class="border text-center p-3 text-lg">شرح</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-600 text-lg">
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
+                                        <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن
+                                            برابر
+                                            100 در
+                                            غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
+                                                class="text-green-800 font-semibold"
+                                                href="https://paanapardakht.com/public/response" target="_blank">کدهای
+                                                برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>RefID</code></td>
+                                        <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره تراكنش
+                                            پرداخت
+                                            انجام شده را بر مي گرداند</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
+                                        <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ مبلغ پرداخت شده
+                                            (
+                                            مبلغ به تومان می باشد ) را بر می گرداند</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>BuyerIP</code></td>
+                                        <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ IP خریدار را بر
+                                            میگرداند</td>
+                                    </tr>
 
-                        <table>
-                            <thead class="text-gray-600">
-                                <tr>
-                                    <th class="border text-center p-3 text-lg">پارامتر</th>
-                                    <th class="border text-center p-3 text-lg">شرح</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-gray-600 text-lg">
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Status</code></td>
-                                    <td class="text-right border p-3">وضعيت درخواست كه در صورت موفقيت آميز بودن برابر
-                                        100 در
-                                        غير اين صورت عددي منفي ميباشد که در صورت منفی بودن, تفصیر آن در تب <a
-                                            class="text-green-800 font-semibold"
-                                            href="https://paanapardakht.com/public/response" target="_blank">کدهای
-                                            برگشتی / خطا‌ها</a> قابل بررسی می باشد</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>RefID</code></td>
-                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره تراكنش پرداخت
-                                        انجام شده را بر مي گرداند</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>Amount</code></td>
-                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ مبلغ پرداخت شده (
-                                        مبلغ به تومان می باشد ) را بر می گرداند</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>BuyerIP</code></td>
-                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ IP خریدار را بر
-                                        میگرداند</td>
-                                </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>PaymentTime</code></td>
+                                        <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ زمان پرداخت
+                                            تراکنش (
+                                            خروجی زمان پرداخت به صورت timestamp می باشد ) را بر می گرداند</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border text-center p-3 text-rose-600"><code>MaskCardNumber</code>
+                                        </td>
+                                        <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره کارت Mask
+                                            شده
+                                            خریدار ( شماره کارتی که پرداخت وجه توسط آن انجام شده است ) را بر می گرداند
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>PaymentTime</code></td>
-                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ زمان پرداخت تراکنش (
-                                        خروجی زمان پرداخت به صورت timestamp می باشد ) را بر می گرداند</td>
-                                </tr>
-                                <tr>
-                                    <td class="border text-center p-3 text-rose-600"><code>MaskCardNumber</code></td>
-                                    <td class="text-right border p-3">در صورتي كه پرداخت موفق باشد؛ شماره کارت Mask شده
-                                        خریدار ( شماره کارتی که پرداخت وجه توسط آن انجام شده است ) را بر می گرداند</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="text-justify text-lg font-medium text-slate-600 leading-9 mt-2">
                             در صورتی که مقدار بازگشتی Status در فرایند استعلام تراکنش از طریق <span
                                 class="text-rose-600">PaymentVerification</span> برابر
@@ -407,8 +428,8 @@ if (isset($result-&gt;Status) &amp;&amp; $result-&gt;Status == 100)
                             نمونه کد Callback و Verify کردن تراکنش
                         </h2>
 
-<pre class="font-vazir text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
-                            dir="ltr"><code>&lt;?php
+                        <pre class="font-vazir w-full overflow-auto text-left bg-zinc-600 text-white border-2 border-zinc-900 p-2 text-lg rounded-sm"
+                            dir="ltr"><code class="min-w-[600px]">&lt;?php
 $MerchantID 	= &#39;XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXXX&#39;;
 $Amount 	= 1000;
 
