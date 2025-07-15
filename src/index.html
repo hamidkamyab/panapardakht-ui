@@ -1,104 +1,124 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>درگاه پرداخت پاناپال</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>درگاه پرداخت پاناپال</title>
 
-    <meta name="description" content="با پاناپی، فروشگاه اینترنتی خود را در چند دقیقه راه‌اندازی کنید. بدون نیاز به دانش فنی، با قالب‌های حرفه‌ای، درگاه پرداخت، گزارش‌گیری و امکانات کامل. شروع فروش آنلاین همین امروز!" />
+  <meta name="description"
+    content="با پاناپی، فروشگاه اینترنتی خود را در چند دقیقه راه‌اندازی کنید. بدون نیاز به دانش فنی، با قالب‌های حرفه‌ای، درگاه پرداخت، گزارش‌گیری و امکانات کامل. شروع فروش آنلاین همین امروز!" />
 
-    <meta name="keywords" content="ساخت فروشگاه اینترنتی, فروشگاه‌ساز, پاناپی, درگاه پرداخت, فروش آنلاین, طراحی فروشگاه, فروشگاه ساز ایرانی, فروشگاه رایگان" />
-    <link rel="canonical" href="https://paanapay.ir/" />
+  <meta name="keywords"
+    content="ساخت فروشگاه اینترنتی, فروشگاه‌ساز, پاناپی, درگاه پرداخت, فروش آنلاین, طراحی فروشگاه, فروشگاه ساز ایرانی, فروشگاه رایگان" />
+  <link rel="canonical" href="https://paanapay.ir/" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="پاناپی | ساخت فروشگاه اینترنتی آسان" />
-    <meta property="og:description" content="ساخت فروشگاه حرفه‌ای در چند دقیقه با پاناپی. بدون نیاز به برنامه‌نویسی، با امکانات کامل برای فروش آنلاین." />
-    <meta property="og:url" content="https://paanapay.ir/" />
-    <meta property="og:image" content="./assets/images/logo.svg" /> 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="پاناپی | ساخت فروشگاه اینترنتی آسان" />
+  <meta property="og:description"
+    content="ساخت فروشگاه حرفه‌ای در چند دقیقه با پاناپی. بدون نیاز به برنامه‌نویسی، با امکانات کامل برای فروش آنلاین." />
+  <meta property="og:url" content="https://paanapay.ir/" />
+  <meta property="og:image" content="./assets/images/logo.svg" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="پاناپی | ساخت فروشگاه اینترنتی در چند دقیقه" />
-    <meta name="twitter:description" content="با پاناپی فروشگاه آنلاین خود را سریع، ساده و حرفه‌ای بسازید. بدون کدنویسی!" />
-    <meta name="twitter:image" content="./assets/images/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="پاناپی | ساخت فروشگاه اینترنتی در چند دقیقه" />
+  <meta name="twitter:description"
+    content="با پاناپی فروشگاه آنلاین خود را سریع، ساده و حرفه‌ای بسازید. بدون کدنویسی!" />
+  <meta name="twitter:image" content="./assets/images/logo.svg" />
 
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-224KTB3SQX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-224KTB3SQX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'G-224KTB3SQX');
-    </script>
+    gtag('config', 'G-224KTB3SQX');
+  </script>
 
-  </head>
-  <body class="bg-white overflow-x-hidden">
+</head>
+
+<body  
+  x-data="{ dark: localStorage.getItem('mode') === 'dark' }"
+  :class="{ 'dark': dark }"
+  x-init="$watch('dark', val => localStorage.setItem('mode', val ? 'dark' : 'light'))"
+  class="bg-white overflow-x-hidden">
+
+  {{> _header }}
+
+
+  <main class="w-full mx-auto pt-36 dark:dark:bg-zinc-800 bg-white">
+
+
+    <button @click="dark = !dark" class="fixed z-40 size-10 bottom-4 left-4 p-2 rounded bg-gray-200 text-zinc-800 text-sm">
+      <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M12 3c.575 0 .66.82.178 1.134a7 7 0 0 0 6.432 12.363c.479-.192 1.023.301.724.721A9 9 0 1 1 12 3" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 20 20"><rect width="20" height="20" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414m2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1M5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414M4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2z" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>  
     
-    {{> _header }}
+    </button>
 
-    <main class="w-full mx-auto pt-36">
-      <!-- hero section -->
-      <div id="hero-section" class=" mx-auto ">
-        {{> hero }}
-      </div>
-      <!-- hero section -->
+    <!-- hero section -->
+    <div id="hero-section" class=" mx-auto ">
+      {{> hero }}
+    </div>
+    <!-- hero section -->
 
-      <!-- partners section -->
-      <div id="partners-section" class="w-full  mx-auto ">
-        {{> partners }}
-      </div>
-      <!-- partners section -->
-      
-      <!-- Capabilities section -->
-      <div id="capabilities-section" class="w-full  mx-auto ">
-        {{> capabilities }}
-      </div>
-      <!-- Capabilities section -->
+    <!-- partners section -->
+    <div id="partners-section" class="w-full  mx-auto ">
+      {{> partners }}
+    </div>
+    <!-- partners section -->
 
-      <!-- features section -->
-      <div id="features-section" class="w-full  mx-auto ">
-        {{> features }}
-      </div>
-      <!-- features section -->
+    <!-- Capabilities section -->
+    <div id="capabilities-section" class="w-full  mx-auto ">
+      {{> capabilities }}
+    </div>
+    <!-- Capabilities section -->
 
-      <!-- verify_docs section -->
-      <div id="verify_docs-section" class="w-full  mx-auto overflow-x-hidden">
-        {{> verify_docs }}
-      </div>
-      <!-- verify_docs section -->
+    <!-- features section -->
+    <div id="features-section" class="w-full  mx-auto ">
+      {{> features }}
+    </div>
+    <!-- features section -->
 
-
-      <!-- products section -->
-      <div id="products-section" class="w-full  mx-auto ">
-        {{> products }}
-      </div>
-      <!-- products section -->
-  
-
-      <!-- Contact section -->
-      <div id="contact-section" class="w-full  mx-auto ">
-        {{> contact }}
-      </div>
-      <!-- Contact section -->
+    <!-- verify_docs section -->
+    <div id="verify_docs-section" class="w-full  mx-auto overflow-x-hidden">
+      {{> verify_docs }}
+    </div>
+    <!-- verify_docs section -->
 
 
+    <!-- products section -->
+    <div id="products-section" class="w-full  mx-auto ">
+      {{> products }}
+    </div>
+    <!-- products section -->
 
- 
-      
-    </main>
 
- <!-- Footer -->
- {{> _footer }}
- <!-- Footer -->
+    <!-- Contact section -->
+    <div id="contact-section" class="w-full  mx-auto ">
+      {{> contact }}
+    </div>
+    <!-- Contact section -->
 
-    <script type="module" defer src="/assets/javascripts/main.js"></script>
 
-  </body>
+
+
+
+  </main>
+
+  <!-- Footer -->
+  {{> _footer }}
+  <!-- Footer -->
+
+  <script type="module" defer src="/assets/javascripts/main.js"></script>
+
+</body>
+
 </html>

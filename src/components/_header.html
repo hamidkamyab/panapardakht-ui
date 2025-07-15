@@ -40,7 +40,7 @@
     <nav  x-data="nav()" x-init="init()" class="fixed w-screen z-40 top-0 bg-white/20 backdrop-blur-lg left-0">
       <div class="px-4 py-4 flex justify-between items-center w-screen max-w-7xl mx-auto relative z-10">
         <div>
-          <a class="block w-24"><img src="/images/logo.svg" /></a>
+          <a class="block w-24"><img src="/images/logo.svg" class="dark:invert dark:brightness-0" /></a>
         </div>
 
         <div class="flex items-center gap-8 relative">
@@ -53,23 +53,23 @@
           x-transition:leave-start="opacity-100 transform scale-100"
           x-transition:leave-end="opacity-0 transform scale-95"
           class="font-medium text-stone-800 absolute top-14 bg-white/60 backdrop-blur-md -left-4 py-8 border-y border-blue-600/40
-          shadow-md shadow-blue-600/20 lg:shadow-none
+          shadow-md shadow-blue-600/20 lg:shadow-none lg:backdrop-blur-none
           lg:bg-transparent lg:relative lg:top-0 lg:left-0 lg:border-0 lg:py-0">
 
             <ul x-data="{openSubmenu:0}"  @click.outside="openSubmenu = 0" class="flex flex-col lg:flex-row w-screen lg:w-auto items-center gap-6">
               <li class="w-[calc(100%-10px)] lg:w-auto">
-                <a href="/page/document" class="block py-1 text-center">
+                <a href="/page/document" class="block py-1 text-center dark:text-white">
                   مستندات
                 </a>
               </li>
 
               <li class="w-[calc(100%-10px)] lg:w-auto">
-                <a href="/page/download" class="block py-1 text-center">
+                <a href="/page/download" class="block py-1 text-center dark:text-white">
                   ماژول و افزونه ها
                 </a>
               </li>
               <!-- <li @click="openSubmenu !== 1? openSubmenu = 1 : openSubmenu = 0" class="w-[calc(100%-10px)] lg:w-auto group/submenu relative">
-                <a href="javascript:void(0)" class="block py-1 text-center">
+                <a href="javascript:void(0)" class="block py-1 text-center dark:text-white">
                   محصولات
                 </a>
                   
@@ -115,19 +115,19 @@
                 </div>
               </li> -->
               <li class="w-[calc(100%-10px)] lg:w-auto">
-                <a href="http://localhost:8080/#contact" class="block py-1 text-center">
+                <a href="http://localhost:8080/#contact" class="block py-1 text-center dark:text-white">
                   تماس با ما
                 </a>
               </li>
 
               <li class="w-[calc(100%-10px)] lg:w-auto">
-                <a href="https://panapal.ir/blogs/" class="block py-1 text-center">
+                <a href="https://panapal.ir/blogs/" class="block py-1 text-center dark:text-white">
                   اخبار
                 </a>
               </li>
 
               <li @click="openSubmenu !== 2? openSubmenu = 2 : openSubmenu = 0" class="w-[calc(100%-10px)] lg:w-auto group/submenu relative">
-                <a href="javascript:void(0)" class="block py-1 text-center">
+                <a href="javascript:void(0)" class="block py-1 text-center dark:text-white">
                   بیشتر
                 </a>
                   
@@ -171,7 +171,7 @@
 
          <div class="flex items-center gap-2">
            <div class="gradient-border-mask-btn w-[130px] h-[44px] font-medium">
-              <a href="#" class="absolute z-20 size-full block top-0 left-0 text-center leading-[44px]">
+              <a href="#" class="absolute z-20 size-full block top-0 left-0 text-center leading-[44px] dark:text-white">
                  کنترل پنل کاربری
               </a>
           </div>

@@ -37,6 +37,8 @@
   background: linear-gradient(140deg, #ececec,#bbb) border-box;
 }
 
+
+
 .gradient-border-mask-contact:hover > .gradient-border-mask-contact::before, .gradient-border-mask-contact.active::before ,.gradient-border-mask-contact:hover::before,.gradient-border-mask-btn::before{ background: linear-gradient(140deg, #234cdf,#00aeff) border-box; }
 .gradient-border-mask-contact.active::before{
   border: 3px solid transparent;
@@ -65,6 +67,10 @@
   background-color: #ffffff;
   opacity: 0.4;
 }
+.gradient-border-mask-contact::after{
+  @apply bg-zinc-600;
+  opacity: 0.4;
+}
 .gradient-border-mask-btn:hover,.gradient-border-mask-btn:hover::after{
   color:#fff !important;
     opacity: 1;
@@ -87,6 +93,10 @@
     opacity: 0.5;
 }
 
+.dark .capabilities::after{
+ display: none;
+}
+
 .vd_patern{
     background-image: url('../../../images/pana-pattern-blue.png');
     background-repeat: repeat;
@@ -95,6 +105,7 @@
 .feature-icon.green-shadow{
   box-shadow: 3px 3px 3px 0.5px #c9ffde;
 }
+
 .feature-shadow.green-shadow{
   box-shadow: 40px 40px 60px 0.5px #c9ffde;
 }
@@ -128,4 +139,12 @@
 .feature-shadow.amber-shadow{
   box-shadow: 40px 40px 60px 0.5px #fdd8c9;
 }
+
+.dark .feature-icon.green-shadow, .dark .feature-icon.cyan-shadow, .dark .feature-icon.indigo-shadow,
+.dark .feature-icon.fuchsia-shadow, .dark .feature-icon.pink-shadow, .dark .feature-icon.amber-shadow,
+.dark .feature-shadow.green-shadow, .dark .feature-shadow.cyan-shadow, .dark .feature-shadow.indigo-shadow,
+.dark .feature-shadow.fuchsia-shadow, .dark .feature-shadow.pink-shadow, .dark .feature-shadow.amber-shadow{
+  box-shadow:none;
+}
+
 }
