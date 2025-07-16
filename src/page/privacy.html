@@ -45,23 +45,32 @@
 
 </head>
 
-<body class="bg-white overflow-x-hidden">
+<body 
+  x-data="{ dark: localStorage.getItem('mode') === 'dark' }"
+  :class="{ 'dark': dark }"
+  x-init="$watch('dark', val => localStorage.setItem('mode', val ? 'dark' : 'light'))"
+class="bg-white overflow-x-hidden">
 
     {{> _header }}
 
 
-    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100">
+    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100 dark:bg-zinc-800">
+            <button @click="dark = !dark" class="fixed z-40 size-10 bottom-4 left-4 p-2 rounded bg-gray-200 text-zinc-800 text-sm">
+      <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M12 3c.575 0 .66.82.178 1.134a7 7 0 0 0 6.432 12.363c.479-.192 1.023.301.724.721A9 9 0 1 1 12 3" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 20 20"><rect width="20" height="20" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414m2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1M5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414M4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2z" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>  
+    
+    </button>
         <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
             <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl w-full px-6 lg:px-0 flex flex-col">
                 <div class="w-full px-16">
-                    <h1 class="text-right text-3xl font-bold border-b border-gray-400 pb-4 mb-4">
+                    <h1 class="text-right text-3xl font-bold border-b border-gray-400 pb-4 mb-4 dark:text-white">
                         حریم خصوصی و سیاست امنیت اطلاعات
                     </h1>
 
                     <div class="mt-8">
 
-                        <h4 class="font-bold">سیاست کلی امنیت اطلاعات</h4>
-                        <p class="text-justify mt-3 mb-6">
+                        <h4 class="font-bold dark:text-white">سیاست کلی امنیت اطلاعات</h4>
+                        <p class="text-justify mt-3 mb-6 dark:text-gray-300">
                             محل فعالیت شبکه پرداخت
                             <?php echo $CONF['site_name']; ?> در جمهوری اسلامی ایران و تابع شرایط و قوانین این کشور است.
                             قوانین بانک مرکزی، قوانین ابلاغی شورای عالی فضای مجازی و کمیته تعیین مصادیق محتوای مجرمانه
@@ -70,8 +79,8 @@
                             آنها موافقت نموده اید.
                         </p>
 
-                        <h4 class="font-bold">سیاست کلی امنیت اطلاعات</h4>
-                        <p class="text-justify mt-3 mb-6">
+                        <h4 class="font-bold dark:text-white">سیاست کلی امنیت اطلاعات</h4>
+                        <p class="text-justify mt-3 mb-6 dark:text-gray-300">
                             به صورت کلی، سیاست های حفظ امنیت اطلاعات و حفظ حریم خصوصی به فرایند حفاظت از اطلاعات در
                             برابر انواع کارهای غیرمجاز مانند دسترسی، استفاده، افشاء ، اختلال ، تغییر ، مطالعه ، بازرسی و
                             ضبط یا تخریب اطلاق می شود. شبکه پرداخت
@@ -81,8 +90,8 @@
                             های فیزیکی و مجازی مرتبط با حفاظت داده هامی باشد.
                         </p>
 
-                        <h4 class="font-bold">چه اطلاعاتی از پذیرندگان نگهداری می شود</h4>
-                        <p class="text-justify mt-3 mb-6">
+                        <h4 class="font-bold dark:text-white">چه اطلاعاتی از پذیرندگان نگهداری می شود</h4>
+                        <p class="text-justify mt-3 mb-6 dark:text-gray-300">
                             اطلاعات نگهداری شده از پذیرندگان بعد از ثبت نام شامل شماره تماس، مشخصات هویتی و تصویر کارت
                             ملی، شماره شبای حساب بانکی پذیرنده، کلیه تراکنش های مالی ورودی خروجی حساب و لاگ فعالیت های
                             روزانه ایشان می باشد. این اطلاعات به جهت پیشگیری ازفعالیت های مجرمانه بصورت روزانه آنالیز و
@@ -91,15 +100,15 @@
                             ارگانی ارائه نخواهد شد مگر با دستور مراجع قضایی و به جهت کشف و دستگیری افراد متخلف.
                         </p>
 
-                        <h4 class="font-bold">اطلاعات جمع آوری شده در حین انجام تراکنش</h4>
-                        <p class="text-justify mt-3 mb-6">
+                        <h4 class="font-bold dark:text-white">اطلاعات جمع آوری شده در حین انجام تراکنش</h4>
+                        <p class="text-justify mt-3 mb-6 dark:text-gray-300">
                             قبل از هدایت انجام دهنده تراکنش ( دارنده کارت بانکی ) به درگاه پرداخت و بعد از انجام تراکنش
                             و هدایت به وب سایت مقصد، اطلاعاتی از ایشان شامل IP و اطلاعات مورد نیاز فنی که برای رفع
                             مغایرت و بهبود عملکرد سیستم ذخیره و مورد استفاده قرار می گیرد.
                         </p>
 
-                        <h4 class="font-bold">نحوه حفاظت از اطلاعات</h4>
-                        <p class="text-justify mt-3 mb-6">
+                        <h4 class="font-bold dark:text-white">نحوه حفاظت از اطلاعات</h4>
+                        <p class="text-justify mt-3 mb-6 dark:text-gray-300">
                             تمامی اطلاعات موجود به صورت کدگذاری شده و با بالاترین استاندارهای امنیتی و زیرساخت شبکه ای
                             محافظت و نگهداری می شود. مدل معماری چندلایه به ما کمک میکند تا از حداکثر حفاظت و امنیت موجود
                             استفاده کنیم. سرورهای مورد استفاده در دیتاسنتر شرکت پرداخت الکترونیک سامان کیش و بانک سامان

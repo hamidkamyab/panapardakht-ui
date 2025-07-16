@@ -45,20 +45,33 @@
 
 </head>
 
-<body class="bg-white overflow-x-hidden">
+<body 
+  x-data="{ dark: localStorage.getItem('mode') === 'dark' }"
+  :class="{ 'dark': dark }"
+  x-init="$watch('dark', val => localStorage.setItem('mode', val ? 'dark' : 'light'))"
+class="bg-white overflow-x-hidden">
 
     {{> _header }}
 
 
-    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100">
-        <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
+    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100 dark:bg-zinc-800">
+
+        
+    <button @click="dark = !dark" class="fixed z-40 size-10 bottom-4 left-4 p-2 rounded bg-gray-200 text-zinc-800 text-sm">
+      <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M12 3c.575 0 .66.82.178 1.134a7 7 0 0 0 6.432 12.363c.479-.192 1.023.301.724.721A9 9 0 1 1 12 3" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 20 20"><rect width="20" height="20" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414m2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1M5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414M4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2z" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>  
+    
+    </button>
+
+
+        <section class="bg-transparent flex flex-col relative z-20 items-center pb-16 xl:pb-5">
             <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl w-full px-6 lg:px-0 flex flex-col">
-                <div class="pb-16">
-                    <h1 class="text-3xl font-semibold border-b pb-4 border-gray-400">
+                <div class="pb-16 2xl:pb-2">
+                    <h1 class="text-3xl font-semibold border-b pb-4 border-gray-400 dark:text-white">
                         پیگیری تراکنش
                     </h1>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 lg:mt-10">
                         <ul
                             class="flex relative flex-col lg:flex-row lg:justify-between justify-start lg:items-center items-center gap-28 lg:gap-0 w-2/3 m-auto mt-10 h-18 before:content-[''] lg:before:w-full lg:before:h-0.5 before:h-full before:w-0.5 before:bg-[#dfafe7] before:absolute before:-z-[1]">
                             <li class="relative">
@@ -71,7 +84,7 @@
                                     <span
                                         class="border-2 border-[#9b37bc] size-8 leading-8 text-[#9b37bc] font-bold text-lg rounded-full block text-center bg-[#faf5fb]">1</span>
                                     <span
-                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2">عضو
+                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2 dark:text-white">عضو
                                         شو</span>
                                 </div>
                             </li>
@@ -85,7 +98,7 @@
                                     <span
                                         class="border-2 border-[#9b37bc] size-8 leading-8 text-[#9b37bc] font-bold text-lg rounded-full block text-center bg-[#faf5fb]">2</span>
                                     <span
-                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2">درخواست
+                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2 dark:text-white">درخواست
                                         پشتیبانی بزن</span>
                                 </div>
                             </li>
@@ -99,18 +112,18 @@
                                     <span
                                         class="border-2 border-[#9b37bc] size-8 leading-8 text-[#9b37bc] font-bold text-lg rounded-full block text-center bg-[#faf5fb]">3</span>
                                     <span
-                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2">با
+                                        class="text-center font-semibold whitespace-nowrap lg:backdrop-blur-none backdrop-blur-md lg:py-0 py-2 dark:text-white">با
                                         فروشنده کالا ارتباط بگیر</span>
                                 </div>
                             </li>
                         </ul>
 
-                        <div class="mt-24 sm:mt-12 lg:mt-32 flex flex-col gap-2">
-                            <h4 class="text-lg font-semibold">
+                        <div class="mt-24 sm:mt-12 lg:mt-44 flex flex-col gap-2">
+                            <h4 class="text-lg font-semibold dark:text-white">
                                 چطور بدونم از چه وب سایتی خرید کردم ؟
                             </h4>
 
-                            <p class="text-justify text-lg leading-loose lg:leading-normal">
+                            <p class="text-justify text-lg xl:text-xl leading-loose dark:text-gray-300">
                                 واسه پیگیری خرید و پیدا کردن وب سایتی که از اون خرید کردید اول باید عضو شبکه پرداخت پاناپال بشید. ثبت نام فقط چند ثانیه طول میکشه. بعدش وارد بخش پشتیبانی بشید و یه تیکت ایجاد کنید, دپارتمان پیگیری خرید انتخاب و اطلاعاتی که از شما پرسیده میشه رو وارد کنید. منتظر ارتباط تون با پذیرنده و پشتیبان وب سایتی که از اون خرید کردید باشید.
                             </p>
                         </div>

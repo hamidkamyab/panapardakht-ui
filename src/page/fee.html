@@ -45,45 +45,56 @@
 
 </head>
 
-<body class="bg-white overflow-x-hidden">
+<body 
+x-data="{ dark: localStorage.getItem('mode') === 'dark' }"
+        :class="{ 'dark': dark }"
+        x-init="$watch('dark', val => localStorage.setItem('mode', val ? 'dark' : 'light'))"
+class="bg-white overflow-x-hidden">
 
     {{> _header }}
 
 
-    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100">
+    <main  class="w-full mx-auto min-h-screen pt-36 bg-slate-100 dark:bg-zinc-800 ">
+
+        <button @click="dark = !dark" class="fixed z-40 size-10 bottom-4 left-4 p-2 rounded bg-gray-200 text-zinc-800 text-sm">
+            <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M12 3c.575 0 .66.82.178 1.134a7 7 0 0 0 6.432 12.363c.479-.192 1.023.301.724.721A9 9 0 1 1 12 3" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>
+            <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 20 20"><rect width="20" height="20" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414m2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1M5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414M4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2z" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>  
+    
+        </button>
+
         <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
             <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl w-full px-6 lg:px-0 flex flex-col">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-3 md:grid-rows-2">
                     <div class="flex justify-center flex-wrap p-8">
-                        <h2 class="font-semibold text-xl w-full text-center pb-5">‌کسب و کارهای کوچک و متوسط</h2>
+                        <h2 class="font-semibold text-xl w-full text-center pb-5 dark:text-white">‌کسب و کارهای کوچک و متوسط</h2>
 
-                        <figure class="h-36 w-full flex justify-center  border-y py-5 border-slate-300">
+                        <figure class="h-36 w-full flex justify-center  border-y py-5 border-slate-300 dark:border-zinc-600">
                             <img src="/images/small-business.svg" class="h-full" alt="Small Business" />
                         </figure>
-                        <h4 class=" w-full text-center py-5">
+                        <h4 class=" w-full text-center py-5 dark:text-white">
                             <b class="text-xl">
                                 1
                             </b> درصد کارمزد از هر درخواست تسویه
                             تا سقف <b class="text-xl">3000</b> تومان
                         </h4>
-                        <p class="w-full text-justify">
+                        <p class="w-full text-justify dark:text-gray-300">
                             مبالغ تمام تراکنش‌های صورت گرفته از طریق درگاه پرداخت شما بدون کسر کارمزد وارد کیف پول شما
                             خواهد شد, تنها در زمان ثبت درخواست تسویه ۱ درصد مبلغ تا سقف ۳,۰۰۰ تومان به عنوان کارمزد از
                             مبلغ تسویه کسر خواهد شد.
                         </p>
                     </div>
                     <div class="flex justify-center flex-wrap p-8">
-                        <h2 class="font-semibold text-xl w-full text-center pb-5">کسب و کارهای بزرگ‌</h5>
-                            <figure class="h-36 w-full flex justify-center  border-y py-5 border-slate-300">
+                        <h2 class="font-semibold text-xl w-full text-center pb-5 dark:text-white">کسب و کارهای بزرگ‌</h5>
+                            <figure class="h-36 w-full flex justify-center  border-y py-5 border-slate-300 dark:border-zinc-600">
                                 <img src="/images/enterprise-business.svg" class="h-full" alt="Small Business" />
                             </figure>
-                            <h4 class=" w-full text-center py-5">
+                            <h4 class=" w-full text-center py-5 dark:text-white">
                                 ما برای کسب و کارهای بزرگ پلن‌های ویژه‌ای داریم
 
                             </h4>
 
-                            <p class="w-full text-justify">
+                            <p class="w-full text-justify dark:text-gray-300">
                             اگر کسب و کار بزرگی رو اداره میکنید یا روزانه بیشتر از 100 تراکنش دارید، از طریق بخش
                             پشتیبانی
                             حساب کاربری تون یه درخواست پشتیبانی ایجاد کنید و نوع کسب و کارتون رو شرح بدید. همکاران مون
@@ -92,17 +103,17 @@
                             </p>
                     </div>
                     <div class="md:col-span-2 mt-8" >
-                        <div class="flex flex-col w-full overflow-x-auto gap-8 justify-center items-center py-16 px-4 bg-gray-100 border border-gray-300 rounded-md  shadow-md shadow-gray-300/50">
+                        <div class="flex flex-col w-full overflow-x-auto gap-8 justify-center items-center py-16 px-4 bg-gray-100 dark:bg-zinc-600 dark:border-zinc-400 border border-gray-300 rounded-md  shadow-md shadow-gray-300/50">
                             <div class="plan">
-                                <h3 class="font-medium md:font-semibold text-base md:text-lg" >
+                                <h3 class="font-medium md:font-semibold text-base md:text-lg dark:text-white" >
                                     به منظور محاسبه کارمزد تراکنش از فرم زیر
                                     استفاده کنید
                                 </h3>
                             </div>
                             <div class="group/calc flex justify-center">
                                     <input id="amount" name="amount" type="text" placeholder="مبلغ تسویه (تومان)"
-                                        class="amount border-b border-blue-600 w-40 md:w-80 h-10 md:h-12 px-2 py-1 focus:outline-none focus:ring-0 focus:shadow-md focus:shadow-gray-200 text-center" autocomplete="off" oninput="feeCalculator()" />
-                                    <div class="result group-focus-within/calc:shadow-md group-focus-within/calc:shadow-gray-300 w-20 md:w-40 h-10 md:h-12 bg-blue-600 text-white flex justify-center gap-1 items-center ">
+                                        class="amount border-b border-blue-600 w-40 md:w-80 h-10 md:h-12 px-2 py-1 focus:outline-none focus:ring-0 focus:shadow-md focus:shadow-gray-200 dark:focus:shadow-zinc-400 text-center" autocomplete="off" oninput="feeCalculator()" />
+                                    <div class="result group-focus-within/calc:shadow-md group-focus-within/calc:shadow-gray-300 dark:group-focus-within/calc:shadow-zinc-400/75  w-20 md:w-40 h-10 md:h-12 bg-blue-600 text-white flex justify-center gap-1 items-center ">
                                         <span id="wage" class="font-medium text-lg">0</span> 
                                         <span>تومان</span>
                                     </div>

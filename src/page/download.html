@@ -45,16 +45,28 @@
 
 </head>
 
-<body class="bg-white overflow-x-hidden">
+<body 
+  x-data="{ dark: localStorage.getItem('mode') === 'dark' }"
+  :class="{ 'dark': dark }"
+  x-init="$watch('dark', val => localStorage.setItem('mode', val ? 'dark' : 'light'))"
+class="bg-white dark:bg-zinc-600 overflow-x-hidden">
 
     {{> _header }}
 
-    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100">
+    <main class="w-full mx-auto min-h-screen pt-36 bg-slate-100 dark:bg-zinc-800">
+
+ <button @click="dark = !dark" class="fixed z-40 size-10 bottom-4 left-4 p-2 rounded bg-gray-200 text-zinc-800 text-sm">
+      <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24"><rect width="24" height="24" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M12 3c.575 0 .66.82.178 1.134a7 7 0 0 0 6.432 12.363c.479-.192 1.023.301.724.721A9 9 0 1 1 12 3" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg  x-show="dark" xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 20 20"><rect width="20" height="20" fill="none"/><path fill="currentColor" fill-rule="evenodd" d="M10 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1m4 8a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-.464 4.95l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 1.414m2.12-10.607a1 1 0 0 1 0 1.414l-.706.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M17 11a1 1 0 1 0 0-2h-1a1 1 0 1 0 0 2zm-7 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1M5.05 6.464A1 1 0 1 0 6.465 5.05l-.708-.707a1 1 0 0 0-1.414 1.414zm1.414 8.486l-.707.707a1 1 0 0 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 1.414M4 11a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2z" clip-rule="evenodd" stroke-width="0.4" stroke="currentColor"/></svg>  
+    
+    </button>
+
+
         <section class="bg-transparent flex flex-col relative z-20 items-center pb-20">
             <div class="lg:max-w-5xl xl:max-w-7xl md:max-w-2xl max-w-xl px-6 lg:px-0 flex flex-col">
                 <div class="pb-24 px-6 md:px-0 xl:px-12">
                     <div class="border-b border-gray-400 pb-4 mb-4">
-                        <h1 class="text-right text-3xl font-bold">
+                        <h1 class="text-right text-3xl font-bold dark:text-white">
                             مرکز دانلود نمونه کد, ماژول و افزونه‌ها
                         </h1>
                     </div>
@@ -62,7 +74,7 @@
                     <ul class="w-full grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 xl:gap-8 my-8">
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <span class="block bg-blue-600 text-white size-28 rounded-full p-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 1024 1024">
@@ -72,8 +84,8 @@
                                             stroke-width="0.5" stroke="currentColor" />
                                     </svg>
                                 </span>
-                                <h2 class="font-medium text-center">مستندات و نمونه کدهای اتصال به وب‌سرویس</h2>
-                                <p class="text-justify text-slate-600">مستندات و راهنمای کامل اتصال به وب‌سرویس های
+                                <h2 class="font-medium text-center dark:text-white">مستندات و نمونه کدهای اتصال به وب‌سرویس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">مستندات و راهنمای کامل اتصال به وب‌سرویس های
                                     پرداختی همراه با توضیحات و نمونه کدهای لازم جهت برقراری ارتباط با وب‌سرویس, ایجاد
                                     تراکنش, هدایت به صفحه پرداخت, پرداخت آنلاین تراکنش, Verify کردن پرداخت و تحویل سرویس
                                     یا محصول به مشتری.</p>
@@ -82,9 +94,9 @@
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">مستندات
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">مستندات
                                         و نمونه کدها</button>
                                 </div>
 
@@ -95,7 +107,7 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <span class="block bg-blue-600 text-white size-28 rounded-full p-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-full" viewBox="0 0 24 24">
@@ -108,17 +120,17 @@
                                         </g>
                                     </svg>
                                 </span>
-                                <h2 class="font-medium text-center">جدول خطا و پاسخ‌های برگشتی وب‌سرویس</h2>
-                                <p class="text-justify text-slate-600">جدول و مرجع کامل تفسیر پاسخ‌ و خطاهای برگشتی
+                                <h2 class="font-medium text-center dark:text-white">جدول خطا و پاسخ‌های برگشتی وب‌سرویس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">جدول و مرجع کامل تفسیر پاسخ‌ و خطاهای برگشتی
                                     وب‌سرویس در فرایندهای مختلف ایجاد تراکنش, Verify کردن تراکنش و ...</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">خطا
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">خطا
                                         و پاسخ های برگشتی</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Online Version</span>
@@ -128,7 +140,7 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <span class="block bg-blue-600 text-white size-28 rounded-full p-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -139,8 +151,8 @@
                                             d="M16 26H4V6h24v10h2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h12Z" />
                                     </svg>
                                 </span>
-                                <h2 class="font-medium text-center">کد مربوط به لوگوی تاييد و نماد اعتبار</h2>
-                                <p class="text-justify text-slate-600">لوگوی تاييد و نماد اعتبار به منظور تایید وبسایت
+                                <h2 class="font-medium text-center dark:text-white">کد مربوط به لوگوی تاييد و نماد اعتبار</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">لوگوی تاييد و نماد اعتبار به منظور تایید وبسایت
                                     استفاده کننده از دروازه پرداخت به کار می‌رود. بر اساس قوانین، تمامی وبسایت‌های
                                     استفاده کننده از درگاه پرداخت، می‌بایست کد مربوط به لوگوی تاييد و نماد اعتبار را در
                                     قسمتی از وبسایت خود که برای کاربران قابل مشاهده باشد، قرار دهند.</p>
@@ -149,9 +161,9 @@
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">نمایش
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">نمایش
                                         کد تایید اعتبار</button>
                                 </div>
 
@@ -161,22 +173,22 @@
                         </li>
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/example_code_php.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">نمونه کد PHP</h2>
-                                <p class="text-justify text-slate-600">نمونه کد PHP به منظور ایجاد, انجام و Verify کردن
+                                <h2 class="font-medium text-center dark:text-white">نمونه کد PHP</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">نمونه کد PHP به منظور ایجاد, انجام و Verify کردن
                                     تراکنش از طریق وب سرور RestFul</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -186,13 +198,13 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/example_ip.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">اسکریپت بررسی IP و پیش نیازهای هاست و سرور</h2>
-                                <p class="text-justify text-slate-600">با استفاده از این اسکریپت قادر خواهید IP سرور یا
+                                <h2 class="font-medium text-center dark:text-white">اسکریپت بررسی IP و پیش نیازهای هاست و سرور</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">با استفاده از این اسکریپت قادر خواهید IP سرور یا
                                     هاست خود را بدست آورده و ضمن بررسی نصب و فعال بودن کلیه پیش نیازهای مورد نیاز جهت
                                     اتصال به وب سرویس, میتوانید تراکنش آزمایشی نیز داشته باشید تا از صحت برقراری ارتباط
                                     و سازگاری سرور یا هاست میزبان اطمینان حال نمایید.</p>
@@ -201,9 +213,9 @@
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
                             </div>
@@ -212,13 +224,13 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/example_postman.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">ایجاد و بررسی تراکنش در Postman</h2>
-                                <p class="text-justify text-slate-600">نمونه کد ایجاد و Verify کردن تراکش در نرم افزار
+                                <h2 class="font-medium text-center dark:text-white">ایجاد و بررسی تراکنش در Postman</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">نمونه کد ایجاد و Verify کردن تراکش در نرم افزار
                                     PostMan, در این کد از وب سرویس RestFul استفاده شده است که ایجاد تراکنش با فراخوانی
                                     متد PaymentRequest و بررسی صحت پرداخت تراکنش با فراخوانی متد PaymentVerification
                                     انجام می‌شود.</p>
@@ -227,9 +239,9 @@
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -239,13 +251,13 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                    <img src="/images/download/joomla_hikashop.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین HikaShop جوملا</h2>
-                                <p class="text-justify text-slate-600">
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین HikaShop جوملا</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">
                                     سازگار با جوملا نسخه 3.6 و بالاتر - سیستم جامع فروشگاه ساز HikaShop به شما اجازه
                                     میدهد به راحتی یک فروشگاه زیبا راه اندازی کرده و با آسودگی خاطر به مدیریت آن
                                     بپردازید!</p>
@@ -254,9 +266,9 @@
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 0.0.1</span>
@@ -266,21 +278,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/joomla_virtuemart.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین ويرچومارت ( VirtueMart ) جوملا</h2>
-                                <p class="text-justify text-slate-600">سازگار با جوملا نسخه 3.6 و بالاتر - سیستم جامع فروشگاه ساز ويرچومارت ( VirtueMart ) به شما اجازه میدهد به راحتی یک فروشگاه زیبا راه اندازی کرده و با آسودگی خاطر به مدیریت آن بپردازید!</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین ويرچومارت ( VirtueMart ) جوملا</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">سازگار با جوملا نسخه 3.6 و بالاتر - سیستم جامع فروشگاه ساز ويرچومارت ( VirtueMart ) به شما اجازه میدهد به راحتی یک فروشگاه زیبا راه اندازی کرده و با آسودگی خاطر به مدیریت آن بپردازید!</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 0.0.1</span>
                             </div>
@@ -289,21 +301,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/script_formpardakht.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">اسکریپت فرم پرداخت ( فرم ساز و آسان پرداخت )</h2>
-                                <p class="text-justify text-slate-600">اسکریپت فرم پرداخت یک اسکریپت ساده و پر کاربرد در زمینه پرداخت آنلاین می باشد که با استفاده از آن می توانید فرم های پرداخت متنوع با فیلد های سفارشی ایجاد کنید و از لینک فرم ساخته شده را با مشتری هایتان به اشتراک بگذارید.</p>
+                                <h2 class="font-medium text-center dark:text-white">اسکریپت فرم پرداخت ( فرم ساز و آسان پرداخت )</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">اسکریپت فرم پرداخت یک اسکریپت ساده و پر کاربرد در زمینه پرداخت آنلاین می باشد که با استفاده از آن می توانید فرم های پرداخت متنوع با فیلد های سفارشی ایجاد کنید و از لینک فرم ساخته شده را با مشتری هایتان به اشتراک بگذارید.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -312,21 +324,21 @@
                         </li>
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/script_opencart_v3.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاين OpenCart 3</h2>
-                                <p class="text-justify text-slate-600">اپن کارت یک از محبوب ترین و پیشرفته ترین سیستم مدیریت محتوای الکترونیک(E-commerce CMS) بر پایه معماری MVC می‌باشد.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاين OpenCart 3</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">اپن کارت یک از محبوب ترین و پیشرفته ترین سیستم مدیریت محتوای الکترونیک(E-commerce CMS) بر پایه معماری MVC می‌باشد.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -336,21 +348,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/script_prestashop.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین پرستاشاپ</h2>
-                                <p class="text-justify text-slate-600">سازگار با پرستاشاپ نسخه‌های 1.4 و 1.5 و 1.6 - پرستاشاپ یک نرم‌افزار فروشگاه‌ساز رایگان (و متن باز) است که به کسب‌وکارهای بزرگ و کوچک کمک می‌کند تا یک فروشگاه اینترنتی موفق را راه‌اندازی و اداره کنند.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین پرستاشاپ</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">سازگار با پرستاشاپ نسخه‌های 1.4 و 1.5 و 1.6 - پرستاشاپ یک نرم‌افزار فروشگاه‌ساز رایگان (و متن باز) است که به کسب‌وکارهای بزرگ و کوچک کمک می‌کند تا یک فروشگاه اینترنتی موفق را راه‌اندازی و اداره کنند.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
                             </div>
@@ -359,21 +371,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                    <img src="/images/download/script_vipsystem.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">پلاگین پرداخت آنلاین VIPSystem</h2>
-                                <p class="text-justify text-slate-600">VIPSystem یک اسکریپت بسیار قدرتمند در ضمینه راه اندازی سیستم اشتراک VIP میباشد که مناسب انواع سایت های دانلود, فیلم, موزیک, فروش رام موبایل و ... میباشد.</p>
+                                <h2 class="font-medium text-center dark:text-white">پلاگین پرداخت آنلاین VIPSystem</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">VIPSystem یک اسکریپت بسیار قدرتمند در ضمینه راه اندازی سیستم اشتراک VIP میباشد که مناسب انواع سایت های دانلود, فیلم, موزیک, فروش رام موبایل و ... میباشد.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -382,21 +394,21 @@
                         </li>
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                    <img src="/images/download/script_virtual_freer.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین Virtual Freer</h2>
-                                <p class="text-justify text-slate-600">اسکریپت Virtual Freer در واقع یک فارسی است که برای فروش محصولات مجازی به صورت آنلاین مورد استفاده قرار می گیرد. امکاناتی همچون گزارش فروش محصولات به تفکیک روز و تاریخ، امکان دسته بندی کردن کالا و اضافه کردن بینهایت محصول و ...</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین Virtual Freer</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">اسکریپت Virtual Freer در واقع یک فارسی است که برای فروش محصولات مجازی به صورت آنلاین مورد استفاده قرار می گیرد. امکاناتی همچون گزارش فروش محصولات به تفکیک روز و تاریخ، امکان دسته بندی کردن کالا و اضافه کردن بینهایت محصول و ...</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -406,21 +418,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/script_whmcs6.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین WHMCS 6.x</h2>
-                                <p class="text-justify text-slate-600">سازگار با WHMCS نسخه 6 - WHMCS یک پلتفرم مالی و بهترین سیستم کنترل مدیریت کاربران است و برای شرکت های هاستینگ و شرکت های فناوری اطلاعات تهیه شده.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین WHMCS 6.x</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">سازگار با WHMCS نسخه 6 - WHMCS یک پلتفرم مالی و بهترین سیستم کنترل مدیریت کاربران است و برای شرکت های هاستینگ و شرکت های فناوری اطلاعات تهیه شده.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
                             </div>
@@ -429,21 +441,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/script_whmcs7.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین WHMCS 7.x</h2>
-                                <p class="text-justify text-slate-600">سازگار با WHMCS نسخه 7 یا بالاتر - WHMCS یک پلتفرم مالی و بهترین سیستم کنترل مدیریت کاربران است و برای شرکت های هاستینگ و شرکت های فناوری اطلاعات تهیه شده.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین WHMCS 7.x</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">سازگار با WHMCS نسخه 7 یا بالاتر - WHMCS یک پلتفرم مالی و بهترین سیستم کنترل مدیریت کاربران است و برای شرکت های هاستینگ و شرکت های فناوری اطلاعات تهیه شده.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -453,21 +465,21 @@
 
 
                          <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/wordpress_donate.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه فرم پرداخت و حمایت مالی وردپرس</h2>
-                                <p class="text-justify text-slate-600">با این افزونه می‌توانید در هر صفحه یا هر برگه از وردپرس فرم حمایت مالی ایجاد و به راحتی آن را مدیریت کنید</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه فرم پرداخت و حمایت مالی وردپرس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">با این افزونه می‌توانید در هر صفحه یا هر برگه از وردپرس فرم حمایت مالی ایجاد و به راحتی آن را مدیریت کنید</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -477,21 +489,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                     <img src="/images/download/wordpress_easy_digital_download.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین Easy Digital Downloads وردپرس</h2>
-                                <p class="text-justify text-slate-600">Easy Digital Downloads نام افزونه وردپرس برای فروش فایل به ازای پرداخت می باشد و برای راه اندازی فروشگاه اینترنتی فروش فایل های مجازی خود از افزونه فوق استفاده کنند. افزونه ایزی دیجیتال دانلود یک افزونه کاملا فارسی و با پشتیبانی از واحد ارزی کشورمان می باشد.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین Easy Digital Downloads وردپرس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">Easy Digital Downloads نام افزونه وردپرس برای فروش فایل به ازای پرداخت می باشد و برای راه اندازی فروشگاه اینترنتی فروش فایل های مجازی خود از افزونه فوق استفاده کنند. افزونه ایزی دیجیتال دانلود یک افزونه کاملا فارسی و با پشتیبانی از واحد ارزی کشورمان می باشد.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
                             </div>
@@ -500,21 +512,21 @@
 
 
                         <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                    <img src="/images/download/wordpress_gravity_forms.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت فرم ساز Gravity forms وردپرس</h2>
-                                <p class="text-justify text-slate-600">Gravity Forms نام برترین و حرفه ای ترین افزونه فرم ساز وردپرس می باشد که با استفاده از آن قادر هستید انوع فرم های مختلف را در وب سایت وردپرسی خود را بدون نیاز به دانش خاص و یا صرف وقت زیاد طراحی و ایجاد کنید.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت فرم ساز Gravity forms وردپرس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">Gravity Forms نام برترین و حرفه ای ترین افزونه فرم ساز وردپرس می باشد که با استفاده از آن قادر هستید انوع فرم های مختلف را در وب سایت وردپرسی خود را بدون نیاز به دانش خاص و یا صرف وقت زیاد طراحی و ایجاد کنید.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>
@@ -525,21 +537,21 @@
 
 
                          <li data-aos="zoom-in" data-aos-duration="500"
-                            class="border-t-4 border-blue-600 bg-white p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
+                            class="border-t-4 border-blue-600 bg-white dark:bg-zinc-600 p-6 flex flex-wrap hover:shadow-xl transition-all duration-300 items-start justify-center gap-6 shadow-md">
                             <div class="flex items-center flex-col gap-4">
                                 <figure class="bg-blue-600 size-28 rounded-full p-4 flex justify-center">
                                   <img src="/images/download/wordpress_woocommerce.svg" class="h-full" alt="">
                                 </figure>
-                                <h2 class="font-medium text-center">افزونه پرداخت آنلاین WooCommerce ووکامرس وردپرس</h2>
-                                <p class="text-justify text-slate-600">ووکامرس، برترین افزونه ی فروشگاه ساز تحت وردپرس می باشد که به وسیله آن قادر هستید براحتی اقدام به ایجاد یک فروشگاه اینترنتی با امکانات مختلف کنید. با ووکامرس شما می توانید هر چیزی را به فروش برسانید.</p>
+                                <h2 class="font-medium text-center dark:text-white">افزونه پرداخت آنلاین WooCommerce ووکامرس وردپرس</h2>
+                                <p class="text-justify text-slate-600 dark:text-gray-300">ووکامرس، برترین افزونه ی فروشگاه ساز تحت وردپرس می باشد که به وسیله آن قادر هستید براحتی اقدام به ایجاد یک فروشگاه اینترنتی با امکانات مختلف کنید. با ووکامرس شما می توانید هر چیزی را به فروش برسانید.</p>
                             </div>
 
 
                             <div class="self-end flex flex-col items-center gap-6">
                                 <div
-                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
+                                    class="relative w-44 font-medium before:content-[''] before:block before:h-14 before:w-14 before:border before:border-blue-600 hover:before:border-blue-800 dark:before:border-slate-100 dark:hover:before:border-slate-300 before:absolute before:-top-2 before:-right-2 hover:before:right-32 before:z-0 before:transition-all before:duration-300">
                                     <button
-                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white py-2 w-full">دانلود</button>
+                                        class="relative z-10 bg-blue-600 hover:bg-blue-800 dark:bg-slate-100 dark:hover:bg-slate-300 dark:text-blue-600 transition-all duration-300 text-white py-2 w-full">دانلود</button>
                                 </div>
 
                                 <span class="font-medium text-gray-400 font-vazir text-sm">Version 1.0</span>

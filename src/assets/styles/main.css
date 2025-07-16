@@ -67,7 +67,7 @@
   background-color: #ffffff;
   opacity: 0.4;
 }
-.gradient-border-mask-contact::after{
+.dark .gradient-border-mask-contact::after{
   @apply bg-zinc-600;
   opacity: 0.4;
 }
